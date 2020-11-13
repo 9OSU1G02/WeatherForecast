@@ -27,6 +27,9 @@
 		B60AD405255E59AF00293FD9 /* HourlyForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AD404255E59AF00293FD9 /* HourlyForecast.swift */; };
 		B60AD408255E5E6100293FD9 /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AD407255E5E6100293FD9 /* WeatherInfo.swift */; };
 		B60AD40B255E5E9600293FD9 /* WeeklyForcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AD40A255E5E9600293FD9 /* WeeklyForcast.swift */; };
+		B62A2B27255EE80000FB0DB5 /* AllLocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A2B26255EE80000FB0DB5 /* AllLocationTableViewController.swift */; };
+		B62A2B2A255EEA8200FB0DB5 /* CityTempData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A2B29255EEA8200FB0DB5 /* CityTempData.swift */; };
+		B62A2B2E255EFDAA00FB0DB5 /* AllLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A2B2D255EFDAA00FB0DB5 /* AllLocationTableViewCell.swift */; };
 		B6363385255EDC8C007E6208 /* CurrentLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6363384255EDC8C007E6208 /* CurrentLocationService.swift */; };
 		B6E33F6E255EA27200D1D837 /* WeatherLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E33F6D255EA27200D1D837 /* WeatherLocation.swift */; };
 		B6E33F71255EA2AA00D1D837 /* city.csv in Resources */ = {isa = PBXBuildFile; fileRef = B6E33F70255EA2AA00D1D837 /* city.csv */; };
@@ -58,6 +61,9 @@
 		B60AD404255E59AF00293FD9 /* HourlyForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecast.swift; sourceTree = "<group>"; };
 		B60AD407255E5E6100293FD9 /* WeatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfo.swift; sourceTree = "<group>"; };
 		B60AD40A255E5E9600293FD9 /* WeeklyForcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyForcast.swift; sourceTree = "<group>"; };
+		B62A2B26255EE80000FB0DB5 /* AllLocationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllLocationTableViewController.swift; sourceTree = "<group>"; };
+		B62A2B29255EEA8200FB0DB5 /* CityTempData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTempData.swift; sourceTree = "<group>"; };
+		B62A2B2D255EFDAA00FB0DB5 /* AllLocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllLocationTableViewCell.swift; sourceTree = "<group>"; };
 		B6363384255EDC8C007E6208 /* CurrentLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationService.swift; sourceTree = "<group>"; };
 		B6E33F6D255EA27200D1D837 /* WeatherLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherLocation.swift; sourceTree = "<group>"; };
 		B6E33F70255EA2AA00D1D837 /* city.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = city.csv; sourceTree = "<group>"; };
@@ -114,6 +120,7 @@
 		B60AD379255E283C00293FD9 /* WeatherForecast */ = {
 			isa = PBXGroup;
 			children = (
+				B62A2B2C255EFD4B00FB0DB5 /* Custom Cells */,
 				B6363383255EDC43007E6208 /* Location */,
 				B60AD3D6255E434800293FD9 /* Views */,
 				B60AD3A9255E3C2B00293FD9 /* Utility */,
@@ -138,6 +145,7 @@
 				B60AD40A255E5E9600293FD9 /* WeeklyForcast.swift */,
 				B60AD407255E5E6100293FD9 /* WeatherInfo.swift */,
 				B6E33F6D255EA27200D1D837 /* WeatherLocation.swift */,
+				B62A2B29255EEA8200FB0DB5 /* CityTempData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -156,12 +164,6 @@
 			children = (
 				B60AD3E2255E440E00293FD9 /* WeatherView.swift */,
 				B60AD3E3255E440E00293FD9 /* WeatherView.xib */,
-				B60AD3E7255E4D1C00293FD9 /* HourlyForecastCollectionViewCell.swift */,
-				B60AD3E8255E4D1C00293FD9 /* HourlyForecastCollectionViewCell.xib */,
-				B60AD3F4255E4DD700293FD9 /* WeatherInfoCollectionViewCell.swift */,
-				B60AD3F5255E4DD700293FD9 /* WeatherInfoCollectionViewCell.xib */,
-				B60AD3FD255E4EB800293FD9 /* WeeklyForecastTableViewCell.swift */,
-				B60AD3FE255E4EB800293FD9 /* WeeklyForecastTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -170,8 +172,23 @@
 			isa = PBXGroup;
 			children = (
 				B60AD37E255E283C00293FD9 /* WeatherViewController.swift */,
+				B62A2B26255EE80000FB0DB5 /* AllLocationTableViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B62A2B2C255EFD4B00FB0DB5 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B60AD3E7255E4D1C00293FD9 /* HourlyForecastCollectionViewCell.swift */,
+				B60AD3E8255E4D1C00293FD9 /* HourlyForecastCollectionViewCell.xib */,
+				B60AD3F4255E4DD700293FD9 /* WeatherInfoCollectionViewCell.swift */,
+				B60AD3F5255E4DD700293FD9 /* WeatherInfoCollectionViewCell.xib */,
+				B60AD3FD255E4EB800293FD9 /* WeeklyForecastTableViewCell.swift */,
+				B60AD3FE255E4EB800293FD9 /* WeeklyForecastTableViewCell.xib */,
+				B62A2B2D255EFDAA00FB0DB5 /* AllLocationTableViewCell.swift */,
+			);
+			path = "Custom Cells";
 			sourceTree = "<group>";
 		};
 		B6363383255EDC43007E6208 /* Location */ = {
@@ -307,12 +324,15 @@
 				B60AD3E9255E4D1C00293FD9 /* HourlyForecastCollectionViewCell.swift in Sources */,
 				B60AD3FF255E4EB800293FD9 /* WeeklyForecastTableViewCell.swift in Sources */,
 				B60AD3AE255E3C6700293FD9 /* GlobalFunctions.swift in Sources */,
+				B62A2B2A255EEA8200FB0DB5 /* CityTempData.swift in Sources */,
 				B60AD3F6255E4DD700293FD9 /* WeatherInfoCollectionViewCell.swift in Sources */,
 				B60AD37B255E283C00293FD9 /* AppDelegate.swift in Sources */,
+				B62A2B27255EE80000FB0DB5 /* AllLocationTableViewController.swift in Sources */,
 				B60AD395255E2B3300293FD9 /* CurrentWeather.swift in Sources */,
 				B60AD408255E5E6100293FD9 /* WeatherInfo.swift in Sources */,
 				B60AD405255E59AF00293FD9 /* HourlyForecast.swift in Sources */,
 				B60AD3E4255E440E00293FD9 /* WeatherView.swift in Sources */,
+				B62A2B2E255EFDAA00FB0DB5 /* AllLocationTableViewCell.swift in Sources */,
 				B6363385255EDC8C007E6208 /* CurrentLocationService.swift in Sources */,
 				B60AD37D255E283C00293FD9 /* SceneDelegate.swift in Sources */,
 				B60AD40B255E5E9600293FD9 /* WeeklyForcast.swift in Sources */,
