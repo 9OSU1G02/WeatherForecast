@@ -1,0 +1,624 @@
+Ho Chi Minh City,10.776577,106.70085,Vietnam,VN,Hồ Chí Minh
+Hanoi,21.028167,105.854152,Vietnam,VN,Hà Nội
+Haiphong,20.864807,106.683449,Vietnam,VN,Hải Phòng
+Cần Thơ,10.037105,105.788249,Vietnam,VN,Cần Thơ
+Đà Nẵng,16.074806,108.223958,Vietnam,VN,Đà Nẵng
+Huế,16.461901,107.595458,Vietnam,VN,Thừa Thiên-Huế
+Quy Nhơn,13.768898,109.228563,Vietnam,VN,Bình Định
+Hiệp Hòa,10.933333,106.833333,Vietnam,VN,Đồng Nai
+Phú Vinh,18.716667,105.7,Vietnam,VN,Nghệ An
+Thành Phố Thái Nguyên,21.59422,105.848172,Vietnam,VN,Thái Nguyên
+Nha Trang,12.248089,109.19436,Vietnam,VN,Khánh Hòa
+Cà Mau,9.176817,105.152421,Vietnam,VN,Cà Mau
+Việt Trì,21.32274,105.401981,Vietnam,VN,Phú Thọ
+Long Xuyên,10.386392,105.435178,Vietnam,VN,An Giang
+Buôn Ma Thuột,12.674192,108.043542,Vietnam,VN,Đắk Lắk
+Phan Thiết,10.928888,108.102078,Vietnam,VN,Bình Thuận
+Xóm Rạch Giồng,10.033333,105.066667,Vietnam,VN,Kiến Giang
+Sóc Trăng,9.599946,105.971932,Vietnam,VN,Sóc Trăng
+Đà Lạt,11.935883,108.442891,Vietnam,VN,Lâm Đồng
+Quảng Ngãi,15.120467,108.792318,Vietnam,VN,Quảng Ngãi
+Vũng Tàu,10.35,107.066667,Vietnam,VN,Bà Rịa-Vũng Tàu
+Thủ Dầu Một,10.980396,106.651905,Vietnam,VN,Bình Dương
+Thành Phố Nam Định,20.433886,106.177286,Vietnam,VN,Nam Định
+Thành phố Bạc Liêu,9.294141,105.727764,Vietnam,VN,Bạc Liêu
+Thành Phố Thái Bình,20.45,106.340018,Vietnam,VN,Thái Bình
+Tinh Xa,19.8,105.783333,Vietnam,VN,Thanh Hóa
+Sơn Vi,21.116667,105.533333,Vietnam,VN,Hà Nội
+Động Hỏi,17.5,106.633333,Vietnam,VN,Quảng Bình
+Phan Rang-Tháp Chàm,11.564315,108.988581,Vietnam,VN,Ninh Thuận
+Hà Tĩnh,18.34282,105.905695,Vietnam,VN,Hà Tĩnh
+Cao Lãnh,10.460171,105.632944,Vietnam,VN,Đồng Tháp
+Thành Phố Lạng Sơn,21.852639,106.76101,Vietnam,VN,Lạng Sơn
+Cam Ranh,11.9,109.216667,Vietnam,VN,Khánh Hòa
+Plei Khưn,13.95,108.033333,Vietnam,VN,Gia Lai
+Tân An,10.535893,106.41366,Vietnam,VN,Long An
+Cẩm Phả Mines,21.016667,107.3,Vietnam,VN,Quảng Ninh
+Trà Vinh,9.947188,106.342249,Vietnam,VN,Trà Vinh
+Thành Phố Ninh Bình,20.258085,105.979651,Vietnam,VN,Ninh Bình
+Tây Ninh,11.310043,106.098275,Vietnam,VN,Tây Ninh
+Mỹ Hòa,10.37886,106.382463,Vietnam,VN,Tiền Giang
+Kon Tum,14.383333,107.983333,Vietnam,VN,Kon Tum
+Thành Phố Hòa Bình,20.817166,105.33759,Vietnam,VN,Hòa Bình
+An Long,10.284465,105.94246,Vietnam,VN,Vĩnh Long
+Yên Bái,21.722881,104.911296,Vietnam,VN,Yên Bái
+Quảng Trị,16.75,107.2,Vietnam,VN,Quảng Trị
+Châu Phong,10.716667,105.133333,Vietnam,VN,An Giang
+Tuy Hòa,13.095457,109.320939,Vietnam,VN,Phú Yên
+Lào Cai,22.485555,103.970661,Vietnam,VN,Lào Cai
+Hàn Thượng,20.95,106.316667,Vietnam,VN,Hải Dương
+Bắc Giang,21.273073,106.194597,Vietnam,VN,Bắc Giang
+Nà Hoàng,22.65,106.25,Vietnam,VN,Cao Bằng
+Thành Phố Hà Giang,22.823333,104.983572,Vietnam,VN,Hà Giang
+Thành Phố Tuyên Quang,21.823559,105.21424,Vietnam,VN,Tuyên Quang
+Bắc Kạn,22.147009,105.83481,Vietnam,VN,Bắc Kạn
+Bản Lân,21.333333,103.9,Vietnam,VN,Sơn La
+Đông Hà,16.817615,107.100772,Vietnam,VN,Quảng Trị
+Luân Châu,21.733333,103.316667,Vietnam,VN,Điện Biên
+Kiến Đức,11.992172,107.510893,Vietnam,VN,Đắk Nông
+Kẻ Sặt,20.910072,106.147705,Vietnam,VN,Hải Dương
+Lộc Bình,21.758733,106.923346,Vietnam,VN,Lạng Sơn
+Phú Hòa,14.100048,107.96896,Vietnam,VN,Gia Lai
+Đại Nghĩa,20.68667,105.744712,Vietnam,VN,Hà Nội
+Cẩm Xuyên,18.250291,106.00132,Vietnam,VN,Hà Tĩnh
+Neo,21.20048,106.247387,Vietnam,VN,Bắc Giang
+Thị Trấn Hùng Quốc,22.828977,106.323352,Vietnam,VN,Cao Bằng
+Tam Đảo,21.393237,105.614412,Vietnam,VN,Vĩnh Phúc
+Tân Thạnh,10.606662,106.047142,Vietnam,VN,Long An
+Phố Mới,21.153281,106.151644,Vietnam,VN,Bắc Ninh
+Phát Diệm,20.090538,106.083226,Vietnam,VN,Ninh Bình
+Vũng Liêm,10.095755,106.185479,Vietnam,VN,Vĩnh Long
+Triệu Sơn,19.819128,105.603916,Vietnam,VN,Thanh Hóa
+Quảng Phú,12.819647,108.077381,Vietnam,VN,Đắk Lắk
+Rừng Thông,19.81906,105.732795,Vietnam,VN,Thanh Hóa
+Mường Nhé,22.192362,102.457901,Vietnam,VN,Điện Biên
+Sa Thầy,14.413773,107.793393,Vietnam,VN,Kon Tum
+Gia Ray,10.926149,107.401722,Vietnam,VN,Đồng Nai
+Ngọc Lặc,20.091891,105.367607,Vietnam,VN,Thanh Hóa
+Đạ Tẻh,11.511481,107.490921,Vietnam,VN,Lâm Đồng
+Kỳ Sơn,20.886679,105.352438,Vietnam,VN,Hòa Bình
+Thị Trấn Vĩnh Lộc,22.143598,105.271918,Vietnam,VN,Tuyên Quang
+Tô Hạp,12.005815,108.94868,Vietnam,VN,Khánh Hòa
+Khe Sanh,16.628248,106.73884,Vietnam,VN,Quảng Trị
+Cái Nước,8.942308,105.014105,Vietnam,VN,Cà Mau
+Khánh Vĩnh,12.283545,108.904703,Vietnam,VN,Khánh Hòa
+Cầu Diễn,21.03929,105.766593,Vietnam,VN,Hà Nội
+Chờ,21.194911,105.954715,Vietnam,VN,Bắc Ninh
+Tiên Lãng,20.724645,106.553906,Vietnam,VN,Hải Phòng
+Gò Quao,9.733196,105.273935,Vietnam,VN,Kiến Giang
+Phú Quốc,10.216063,103.958709,Vietnam,VN,Kiến Giang
+Vân Tùng,22.430819,105.996873,Vietnam,VN,Bắc Kạn
+Quận Chín,10.839702,106.77093,Vietnam,VN,Hồ Chí Minh
+Ba Tri,10.044273,106.590203,Vietnam,VN,Bến Tre
+Trà Ôn,9.962606,105.921679,Vietnam,VN,Vĩnh Long
+Khoái Châu,20.839116,105.977553,Vietnam,VN,Hưng Yên
+Nhà Bàng,10.625024,105.008545,Vietnam,VN,An Giang
+Thị Trấn Long Điền,10.485573,107.212256,Vietnam,VN,Bà Rịa-Vũng Tàu
+Anh Sơn,18.932492,105.076012,Vietnam,VN,Nghệ An
+Thị Trấn Ngan Dừa,9.567033,105.450185,Vietnam,VN,Bạc Liêu
+Văn Quan,21.865156,106.539253,Vietnam,VN,Lạng Sơn
+Lạc Dương,12.004052,108.419051,Vietnam,VN,Lâm Đồng
+Chí Thạnh,13.308446,109.215217,Vietnam,VN,Phú Yên
+Đống Đa,21.020087,105.830967,Vietnam,VN,Hà Nội
+Ba Đình,21.034072,105.814525,Vietnam,VN,Hà Nội
+Tân Trụ,10.512708,106.507623,Vietnam,VN,Long An
+Bến Tre,10.241466,106.375852,Vietnam,VN,Bến Tre
+Thốt Nốt,10.272133,105.533802,Vietnam,VN,Cần Thơ
+Cầu Kè,9.872403,106.054974,Vietnam,VN,Trà Vinh
+Cầu Giát,19.146003,105.630889,Vietnam,VN,Nghệ An
+Nàng Mau,9.751292,105.534475,Vietnam,VN,Hậu Giang
+Tân Việt,22.864075,105.459045,Vietnam,VN,Cao Bằng
+Pác Miầu,22.829681,105.49334,Vietnam,VN,Cao Bằng
+Phú Thọ,21.399629,105.222208,Vietnam,VN,Phú Thọ
+Mường Chiên,21.842399,103.566077,Vietnam,VN,Sơn La
+Chợ Chu,21.907235,105.642194,Vietnam,VN,Thái Nguyên
+Hậu Lộc,19.914441,105.886149,Vietnam,VN,Thanh Hóa
+Yên Thành,18.998557,105.471158,Vietnam,VN,Nghệ An
+Cam Lâm,12.053979,109.160038,Vietnam,VN,Khánh Hòa
+Gia Lộc,20.867828,106.300001,Vietnam,VN,Hải Dương
+Phú Lộc,9.428382,105.741112,Vietnam,VN,Sóc Trăng
+Lộc Ninh,11.844756,106.590729,Vietnam,VN,Bình Phước
+Gio Linh,16.924802,107.084385,Vietnam,VN,Quảng Trị
+Điện Biên Đông,21.296732,103.220093,Vietnam,VN,Điện Biên
+Tam Điệp,20.156348,105.917367,Vietnam,VN,Ninh Bình
+Đức Phổ,14.813554,108.959312,Vietnam,VN,Quảng Ngãi
+Đức Phong,11.813462,107.24433,Vietnam,VN,Bình Phước
+Mộ Đức,14.95513,108.885863,Vietnam,VN,Quảng Ngãi
+Nam Giang,20.333221,106.17754,Vietnam,VN,Nam Định
+Đô Lương,18.898524,105.30797,Vietnam,VN,Nghệ An
+Vũ Thư,20.43671,106.29116,Vietnam,VN,Thái Bình
+Thị Trấn Yên Thế,22.11075,104.767475,Vietnam,VN,Yên Bái
+Ea Drăng,13.204497,108.21029,Vietnam,VN,Đắk Lắk
+Bình Minh,10.068206,105.822212,Vietnam,VN,Vĩnh Long
+An Phú,10.815913,105.090382,Vietnam,VN,An Giang
+An Lão,14.612405,108.889897,Vietnam,VN,Bình Định
+Đồng Lê,17.883889,106.025362,Vietnam,VN,Quảng Bình
+Lũng Hồ,22.984788,105.239832,Vietnam,VN,Hà Giang
+Thị Trấn Yên Minh,23.117924,105.141593,Vietnam,VN,Hà Giang
+Thị Trấn Đất Đỏ,10.490934,107.270145,Vietnam,VN,Bà Rịa-Vũng Tàu
+Ea T’ling,12.589036,107.895784,Vietnam,VN,Đắk Nông
+Bút Sơn,19.857967,105.854818,Vietnam,VN,Thanh Hóa
+Bích Động,21.274211,106.100689,Vietnam,VN,Bắc Giang
+Phù Cát,14.003158,109.058039,Vietnam,VN,Bình Định
+Phùng,21.089025,105.659013,Vietnam,VN,Hà Nội
+Tam Bình,10.048114,106.000171,Vietnam,VN,Vĩnh Long
+Tĩnh Gia,19.44645,105.778613,Vietnam,VN,Thanh Hóa
+Phước Vĩnh,11.294661,106.795328,Vietnam,VN,Bình Dương
+Long Thành,10.789087,106.950295,Vietnam,VN,Đồng Nai
+Đầm Dơi,8.992138,105.196023,Vietnam,VN,Cà Mau
+Thành Phố Hải Dương,20.940994,106.333016,Vietnam,VN,Hải Dương
+Thị Trấn Na Hang,22.349175,105.382414,Vietnam,VN,Tuyên Quang
+Đăk Đoa,13.995006,108.112065,Vietnam,VN,Gia Lai
+Bắc Sơn,21.899988,106.32077,Vietnam,VN,Lạng Sơn
+Ia Pa,13.533615,108.455285,Vietnam,VN,Gia Lai
+Châu Thành,11.311674,106.029503,Vietnam,VN,Tây Ninh
+Me,20.346972,105.836149,Vietnam,VN,Ninh Bình
+Trới,21.031409,106.991013,Vietnam,VN,Quảng Ninh
+Cái Nhum,10.174121,106.110506,Vietnam,VN,Vĩnh Long
+Pleiku,13.983333,108.0,Vietnam,VN,Gia Lai
+Sơn Tây,21.140534,105.506856,Vietnam,VN,Hà Nội
+Yên Định,20.201454,106.295785,Vietnam,VN,Nam Định
+Lắk,12.410865,108.176816,Vietnam,VN,Đắk Lắk
+A Lưới,16.272282,107.233849,Vietnam,VN,Thừa Thiên-Huế
+Thạnh Mỹ,15.748889,107.836776,Vietnam,VN,Quảng Nam
+Chư Ty,13.805068,107.6961,Vietnam,VN,Gia Lai
+Thanh Lưu,20.473979,105.952682,Vietnam,VN,Hà Nam
+Ô Môn,10.10974,105.623181,Vietnam,VN,Cần Thơ
+Thị Trấn Quảng Uyên,22.694988,106.44235,Vietnam,VN,Cao Bằng
+Phụng Hiệp,9.779723,105.733801,Vietnam,VN,Hậu Giang
+Cù Lao Dung,9.673137,106.148744,Vietnam,VN,Sóc Trăng
+Dương Minh Châu,11.38414,106.230776,Vietnam,VN,Tây Ninh
+Giồng Trôm,10.150212,106.506057,Vietnam,VN,Bến Tre
+Nam Sách,20.992053,106.336128,Vietnam,VN,Hải Dương
+Thanh Hóa,19.8,105.766667,Vietnam,VN,Thanh Hóa
+Đinh Văn,11.786241,108.242819,Vietnam,VN,Lâm Đồng
+Quảng Hà,21.4506,107.755918,Vietnam,VN,Quảng Ninh
+Minh Long,14.93218,108.703279,Vietnam,VN,Quảng Ngãi
+Thị Trấn Thất Khê,22.255252,106.473593,Vietnam,VN,Lạng Sơn
+Vĩnh Thạnh,14.108837,108.78381,Vietnam,VN,Bình Định
+Trà Bồng,15.255691,108.517225,Vietnam,VN,Quảng Ngãi
+Cầu Gồ,21.476786,106.126531,Vietnam,VN,Bắc Giang
+Thành Phố Sơn La,21.325598,103.91882,Vietnam,VN,Sơn La
+Thị Trấn Na Sầm,22.056392,106.6151,Vietnam,VN,Lạng Sơn
+Hương Sơn,21.460142,105.978142,Vietnam,VN,Thái Nguyên
+Quan Sơn,20.259092,104.945212,Vietnam,VN,Thanh Hóa
+An Dương,20.863816,106.613301,Vietnam,VN,Hải Phòng
+Đông Thành,10.892205,106.306136,Vietnam,VN,Long An
+Gia Bình,21.059381,106.174684,Vietnam,VN,Bắc Ninh
+Ba Đồn,17.753527,106.423547,Vietnam,VN,Quảng Bình
+Biên Hòa,10.944689,106.824317,Vietnam,VN,Đồng Nai
+Hưng Yên,20.646366,106.05112,Vietnam,VN,Hưng Yên
+Thủ Thừa,10.602317,106.402073,Vietnam,VN,Long An
+Hồ Xá,17.068362,107.005198,Vietnam,VN,Quảng Trị
+Thị Trấn Bảo Lạc,22.949239,105.68046,Vietnam,VN,Cao Bằng
+Kiên Lương,10.286239,104.646159,Vietnam,VN,Kiến Giang
+Quốc Oai,20.990187,105.640876,Vietnam,VN,Hà Nội
+Thị Trấn Xuân Hoà,22.902427,106.077366,Vietnam,VN,Cao Bằng
+Thiên Tồn,20.299047,105.951976,Vietnam,VN,Ninh Bình
+Liên Hương,11.227614,108.723664,Vietnam,VN,Bình Thuận
+Hương Trà,16.525395,107.475501,Vietnam,VN,Thừa Thiên-Huế
+Hòa Mạc,20.641726,105.989001,Vietnam,VN,Hà Nam
+Tri Tôn,10.420202,105.000733,Vietnam,VN,An Giang
+Nghi Xuân,18.662059,105.755745,Vietnam,VN,Hà Tĩnh
+Thứ Mười Một,9.611445,104.946502,Vietnam,VN,Kiến Giang
+Chợ Mới,10.551234,105.404406,Vietnam,VN,An Giang
+Chợ Lách,10.260322,106.118918,Vietnam,VN,Bến Tre
+Bắc Ninh,21.18608,106.076315,Vietnam,VN,Bắc Ninh
+Kon Dơng,14.038863,108.250113,Vietnam,VN,Gia Lai
+Tân Phú,11.272209,107.436547,Vietnam,VN,Đồng Nai
+Quận Mười Một,10.763829,106.643552,Vietnam,VN,Hồ Chí Minh
+Quận Mười,10.768234,106.666324,Vietnam,VN,Hồ Chí Minh
+Quận Tân Phú,10.783786,106.63704,Vietnam,VN,Hồ Chí Minh
+Quận Ba,10.774943,106.68628,Vietnam,VN,Hồ Chí Minh
+Quận Bình Thạnh,10.803251,106.696665,Vietnam,VN,Hồ Chí Minh
+Kim Tân,20.130533,105.674535,Vietnam,VN,Thanh Hóa
+Ngô Đồng,20.282961,106.443473,Vietnam,VN,Nam Định
+Mù Cang Chải,21.851254,104.08954,Vietnam,VN,Yên Bái
+Thị Trấn Nguyên Bình,22.649952,105.959845,Vietnam,VN,Cao Bằng
+Tánh Linh,11.084206,107.68095,Vietnam,VN,Bình Thuận
+Đắk Mâm,12.457886,107.862461,Vietnam,VN,Đắk Nông
+Thành Phố Cao Bằng,22.665678,106.257858,Vietnam,VN,Cao Bằng
+Vĩnh Trụ,20.560195,106.028121,Vietnam,VN,Hà Nam
+Phước Dân,11.526956,108.929958,Vietnam,VN,Ninh Thuận
+Tứ Kỳ,20.819141,106.406614,Vietnam,VN,Hải Dương
+Tân Châu,11.552017,106.172454,Vietnam,VN,Tây Ninh
+Mường Xén,19.397954,104.152392,Vietnam,VN,Nghệ An
+Sông Thao,21.421304,105.133744,Vietnam,VN,Phú Thọ
+Phú Vang,16.439108,107.714376,Vietnam,VN,Thừa Thiên-Huế
+Hải Lăng,16.693474,107.251245,Vietnam,VN,Quảng Trị
+Núi Sập,10.264779,105.266758,Vietnam,VN,An Giang
+Mỏ Cày,10.133124,106.335189,Vietnam,VN,Bến Tre
+Trâu Quỳ,21.019507,105.936935,Vietnam,VN,Hà Nội
+Đình Lập,21.54633,107.098125,Vietnam,VN,Lạng Sơn
+Tam Kỳ,15.573642,108.474026,Vietnam,VN,Quảng Nam
+Thị Trấn Thuận Châu,21.43858,103.689932,Vietnam,VN,Sơn La
+Thị Trấn Thông Nông,22.784099,105.983201,Vietnam,VN,Cao Bằng
+Krông Năng,12.951698,108.34425,Vietnam,VN,Đắk Lắk
+Thanh Ba,21.498805,105.141038,Vietnam,VN,Phú Thọ
+Yên Châu,21.045842,104.301006,Vietnam,VN,Sơn La
+Vinh,18.673365,105.692317,Vietnam,VN,Nghệ An
+Sơn Tịnh,15.158558,108.795816,Vietnam,VN,Quảng Ngãi
+Rạch Giá,10.012447,105.080913,Vietnam,VN,Kiến Giang
+Thanh Sơn,21.198669,105.178921,Vietnam,VN,Phú Thọ
+Thuận Nam,10.850039,107.87864,Vietnam,VN,Bình Thuận
+Vĩnh Lộc,20.054385,105.615675,Vietnam,VN,Thanh Hóa
+Vạn Giã,12.692028,109.220688,Vietnam,VN,Khánh Hòa
+Bến Lức,10.636399,106.491036,Vietnam,VN,Long An
+Châu Thành,9.700703,105.902023,Vietnam,VN,Sóc Trăng
+Nhơn Trạch,10.722936,106.883411,Vietnam,VN,Đồng Nai
+Thới Lai,10.065217,105.558626,Vietnam,VN,Cần Thơ
+Buôn Trấp,12.484783,108.02982,Vietnam,VN,Đắk Lắk
+M’Đrăk,12.74624,108.742805,Vietnam,VN,Đắk Lắk
+Thanh Khê,16.070599,108.191021,Vietnam,VN,Đà Nẵng
+Xuân Trường,20.292273,106.332745,Vietnam,VN,Nam Định
+Cần Giuộc,10.608571,106.671345,Vietnam,VN,Long An
+Cần Đước,10.509659,106.603078,Vietnam,VN,Long An
+Krông Klang,16.689058,106.887397,Vietnam,VN,Quảng Trị
+Sóc Sơn,21.25782,105.848943,Vietnam,VN,Hà Nội
+Liên Quan,21.057229,105.579191,Vietnam,VN,Hà Nội
+Phong Thổ,22.544328,103.297765,Vietnam,VN,Lai Châu
+Bát Xát,22.543109,103.889887,Vietnam,VN,Lào Cai
+Dĩ An,10.906818,106.769396,Vietnam,VN,Bình Dương
+Vĩnh Hưng,10.890667,105.78495,Vietnam,VN,Long An
+Bình Đại,10.189644,106.691494,Vietnam,VN,Bến Tre
+Vôi,21.355217,106.261502,Vietnam,VN,Bắc Giang
+Tân Túc,10.695412,106.591281,Vietnam,VN,Hồ Chí Minh
+Tân Phú,11.451193,106.868112,Vietnam,VN,Bình Phước
+Cổ Phúc,21.75585,104.827684,Vietnam,VN,Yên Bái
+Tầm Vu,10.441137,106.467927,Vietnam,VN,Long An
+Phúc Yên,21.236954,105.704831,Vietnam,VN,Vĩnh Phúc
+Cổ Lễ,20.32336,106.265838,Vietnam,VN,Nam Định
+Thị Trấn Trạm Tấu,21.466594,104.379657,Vietnam,VN,Yên Bái
+Trà My,15.33965,108.220654,Vietnam,VN,Quảng Nam
+Kim Sơn,19.604094,104.919033,Vietnam,VN,Nghệ An
+Quán Hàu,17.404379,106.640715,Vietnam,VN,Quảng Bình
+Cái Đôi Vàm,8.857065,104.811995,Vietnam,VN,Cà Mau
+Móng Cái,21.524706,107.966195,Vietnam,VN,Quảng Ninh
+Châu Thành,9.869888,106.349394,Vietnam,VN,Trà Vinh
+Lâm,20.327734,106.012083,Vietnam,VN,Nam Định
+Cam Lộ,16.807971,106.994053,Vietnam,VN,Quảng Trị
+Vạn Hà,19.886588,105.67879,Vietnam,VN,Thanh Hóa
+Trần Văn Thời,9.077127,104.979143,Vietnam,VN,Cà Mau
+Hồ,21.06308,106.085704,Vietnam,VN,Bắc Ninh
+Mỹ Xuyên,9.560062,105.989839,Vietnam,VN,Sóc Trăng
+Khâm Đức,15.445076,107.793367,Vietnam,VN,Quảng Nam
+Phúc Thọ,21.103449,105.545511,Vietnam,VN,Hà Nội
+Thị Trấn Tà Lùng,22.497904,106.566902,Vietnam,VN,Cao Bằng
+Đắk Hà,14.513453,107.921022,Vietnam,VN,Kon Tum
+Thị Trấn Mường Khương,22.761406,104.121556,Vietnam,VN,Lào Cai
+Quế Sơn,15.673556,108.220096,Vietnam,VN,Quảng Nam
+Trảng Bàng,11.029873,106.357505,Vietnam,VN,Tây Ninh
+Di Linh,11.581531,108.076415,Vietnam,VN,Lâm Đồng
+Khánh Hải,11.591048,109.040519,Vietnam,VN,Ninh Thuận
+Tân Biên,11.544406,106.011608,Vietnam,VN,Tây Ninh
+Yên Lạc,21.236463,105.572968,Vietnam,VN,Vĩnh Phúc
+Yến Lạc,22.23693,106.181489,Vietnam,VN,Bắc Kạn
+Vĩnh Long,10.253692,105.972201,Vietnam,VN,Vĩnh Long
+Tân Hiệp,10.117091,105.28578,Vietnam,VN,Kiến Giang
+Tân Hiệp,10.44905,106.343858,Vietnam,VN,Tiền Giang
+Bến Cầu,11.110506,106.179235,Vietnam,VN,Tây Ninh
+Thứa,21.019373,106.200443,Vietnam,VN,Bắc Ninh
+Sốp Cộp,20.938815,103.597126,Vietnam,VN,Sơn La
+An Nhơn,13.885787,109.108229,Vietnam,VN,Bình Định
+Yên Thịnh,20.162451,106.006974,Vietnam,VN,Ninh Bình
+Cam Ranh,11.927318,109.160821,Vietnam,VN,Khánh Hòa
+Bù Đốp,11.954861,106.800177,Vietnam,VN,Bình Phước
+Huyện Chiêm Hóa,22.144131,105.272775,Vietnam,VN,Tuyên Quang
+Duyên Hải,9.63497,106.492367,Vietnam,VN,Trà Vinh
+Sơn Dương,21.696756,105.399012,Vietnam,VN,Tuyên Quang
+Sơn Hà,15.041933,108.469734,Vietnam,VN,Quảng Ngãi
+Tân Sơn,11.775213,108.784797,Vietnam,VN,Ninh Thuận
+Châu Thành,10.301218,106.357012,Vietnam,VN,Bến Tre
+Ba Tơ,14.763595,108.732226,Vietnam,VN,Quảng Ngãi
+Thị Trấn Mường Tè,22.380671,102.820107,Vietnam,VN,Lai Châu
+Thị Trấn Phước Bửu,10.53472,107.40202,Vietnam,VN,Bà Rịa-Vũng Tàu
+Chũ,21.373793,106.566489,Vietnam,VN,Bắc Giang
+Tân Hưng,10.83476,105.661354,Vietnam,VN,Long An
+Phước An,12.712981,108.301485,Vietnam,VN,Đắk Lắk
+Thành Phố Hạ Long,20.950452,107.073361,Vietnam,VN,Quảng Ninh
+Chư Prông,13.756836,107.886237,Vietnam,VN,Gia Lai
+Vĩnh Châu,9.32439,105.980065,Vietnam,VN,Sóc Trăng
+Cát Bà,20.727786,107.048186,Vietnam,VN,Hải Phòng
+Vũ Quang,18.38385,105.505904,Vietnam,VN,Hà Tĩnh
+Phú Lộc,16.280351,107.858984,Vietnam,VN,Thừa Thiên-Huế
+Lấp Vò,10.361613,105.51924,Vietnam,VN,Đồng Tháp
+Đồng Xuân,13.377324,109.108068,Vietnam,VN,Phú Yên
+Ea Súp,13.066164,107.885463,Vietnam,VN,Đắk Lắk
+Cô Tô,20.972681,107.765779,Vietnam,VN,Quảng Ninh
+Thới Bình,9.355842,105.099292,Vietnam,VN,Cà Mau
+Ma Đa Gui,11.387022,107.535081,Vietnam,VN,Lâm Đồng
+Ái Tử,16.768857,107.165043,Vietnam,VN,Quảng Trị
+Phủ Thông,22.273137,105.879434,Vietnam,VN,Bắc Kạn
+Quỳnh Côi,20.661918,106.327445,Vietnam,VN,Thái Bình
+Cần Giờ,10.411149,106.954737,Vietnam,VN,Hồ Chí Minh
+Hát Lót,21.197329,104.105953,Vietnam,VN,Sơn La
+Năm Căn,8.758988,104.992851,Vietnam,VN,Cà Mau
+Trà Cú,9.697741,106.258339,Vietnam,VN,Trà Vinh
+Hưng Hà,20.5904,106.22445,Vietnam,VN,Thái Bình
+Mường Khến,20.614414,105.279477,Vietnam,VN,Hòa Bình
+Sơn Trà,16.060681,108.232563,Vietnam,VN,Đà Nẵng
+Bẩn Yên Nhân,20.936527,106.057105,Vietnam,VN,Hưng Yên
+Vĩnh Yên,21.308909,105.604894,Vietnam,VN,Vĩnh Phúc
+Hưng Hóa,21.254873,105.295304,Vietnam,VN,Phú Thọ
+Võ Xu,11.186906,107.560251,Vietnam,VN,Bình Thuận
+Vụ Bản,20.464203,105.443476,Vietnam,VN,Hòa Bình
+Văn Giang,20.94301,105.931194,Vietnam,VN,Hưng Yên
+Plei Kần,14.704947,107.686201,Vietnam,VN,Kon Tum
+Chư Sê,13.69153,108.080232,Vietnam,VN,Gia Lai
+Phú Thái,20.962781,106.509495,Vietnam,VN,Hải Dương
+An Châu,10.445591,105.386218,Vietnam,VN,An Giang
+Quảng Xương,19.729475,105.782731,Vietnam,VN,Thanh Hóa
+Nông Cống,19.624028,105.649412,Vietnam,VN,Thanh Hóa
+Quế,20.580637,105.872664,Vietnam,VN,Hà Nam
+Thạch Hà,18.367877,105.861219,Vietnam,VN,Hà Tĩnh
+Mỹ Tho,10.360045,106.35996,Vietnam,VN,Tiền Giang
+Mỹ Thọ,10.442667,105.695075,Vietnam,VN,Đồng Tháp
+Quỳ Hợp,19.325456,105.182509,Vietnam,VN,Nghệ An
+Bắc Hà,22.539107,104.293053,Vietnam,VN,Lào Cai
+Vĩnh Thạnh,10.22263,105.398412,Vietnam,VN,Cần Thơ
+Cờ Đỏ,10.093769,105.429161,Vietnam,VN,Cần Thơ
+Đức Thọ,18.539568,105.583024,Vietnam,VN,Hà Tĩnh
+Chùa Hang,21.623845,105.841682,Vietnam,VN,Thái Nguyên
+Tuy Phước,13.827381,109.166508,Vietnam,VN,Bình Định
+Khe Tre,16.169097,107.717933,Vietnam,VN,Thừa Thiên-Huế
+Lai Cách,20.932525,106.247556,Vietnam,VN,Hải Dương
+Đắk Rve,14.507174,108.247299,Vietnam,VN,Kon Tum
+Ít Ong,21.517501,104.027013,Vietnam,VN,Sơn La
+Diên Khánh,12.254904,109.093316,Vietnam,VN,Khánh Hòa
+Côn Đảo,8.682279,106.607283,Vietnam,VN,Bà Rịa-Vũng Tàu
+Đồng Hới,17.468848,106.622264,Vietnam,VN,Quảng Bình
+Thủ Đức,10.848627,106.772089,Vietnam,VN,Hồ Chí Minh
+Thị Trấn Phước Long,9.437527,105.462166,Vietnam,VN,Bạc Liêu
+Trần Cao,20.729521,106.179706,Vietnam,VN,Hưng Yên
+Kông Chro,13.77532,108.525576,Vietnam,VN,Gia Lai
+Gò Dầu,11.088502,106.263456,Vietnam,VN,Tây Ninh
+Bảo Lộc,11.54798,107.807722,Vietnam,VN,Lâm Đồng
+An Lão,20.822936,106.555753,Vietnam,VN,Hải Phòng
+Cái Răng,10.000898,105.750951,Vietnam,VN,Cần Thơ
+Vị Thanh,9.784492,105.470123,Vietnam,VN,Hậu Giang
+Trảng Bom,10.953579,107.005892,Vietnam,VN,Đồng Nai
+Tiền Hải,20.405567,106.503651,Vietnam,VN,Thái Bình
+Cẩm Phả,21.010036,107.273451,Vietnam,VN,Quảng Ninh
+Nghèn,18.45119,105.77969,Vietnam,VN,Hà Tĩnh
+Quận Sáu,10.746795,106.649032,Vietnam,VN,Hồ Chí Minh
+Quận Năm,10.755665,106.667451,Vietnam,VN,Hồ Chí Minh
+Quận Một,10.780687,106.699444,Vietnam,VN,Hồ Chí Minh
+Quận Phú Nhuận,10.794752,106.676297,Vietnam,VN,Hồ Chí Minh
+Lai Vung,10.28701,105.661697,Vietnam,VN,Đồng Tháp
+Phú Ninh,15.554728,108.411423,Vietnam,VN,Quảng Nam
+Đắk Glei,15.086417,107.735768,Vietnam,VN,Kon Tum
+Thành Phố Bà Rịa,10.496292,107.168409,Vietnam,VN,Bà Rịa-Vũng Tàu
+Tây Đằng,21.198087,105.422172,Vietnam,VN,Hà Nội
+Tây Hồ,21.068947,105.810526,Vietnam,VN,Hà Nội
+Bình Sơn,15.297763,108.761237,Vietnam,VN,Quảng Ngãi
+Ia Kha,13.962419,107.844844,Vietnam,VN,Gia Lai
+Hữu Lũng,21.505597,106.344594,Vietnam,VN,Lạng Sơn
+Hà Trung,20.012846,105.853223,Vietnam,VN,Thanh Hóa
+Bo,20.672638,105.536246,Vietnam,VN,Hòa Bình
+Đại Lộc,15.882144,108.120918,Vietnam,VN,Quảng Nam
+Một Ngàn,9.924023,105.62964,Vietnam,VN,Hậu Giang
+Thị Trấn Việt Quang,22.415088,104.806816,Vietnam,VN,Hà Giang
+Bác Ái,11.841038,108.903158,Vietnam,VN,Ninh Thuận
+Thị Trấn Thanh Nhật,22.687495,106.670044,Vietnam,VN,Cao Bằng
+Ngã Bảy,9.813714,105.820956,Vietnam,VN,Hậu Giang
+Thống Nhất,10.950546,107.14571,Vietnam,VN,Đồng Nai
+Đồng Xoài,11.534946,106.88324,Vietnam,VN,Bình Phước
+Kim Bài,20.852649,105.769629,Vietnam,VN,Hà Nội
+Đồng Mỏ,21.657006,106.578315,Vietnam,VN,Lạng Sơn
+Sịa,16.574519,107.510663,Vietnam,VN,Thừa Thiên-Huế
+Thường Xuân,19.902945,105.347233,Vietnam,VN,Thanh Hóa
+Hiệp Đức,15.58224,108.114223,Vietnam,VN,Quảng Nam
+Lái Thiêu,10.905117,106.699487,Vietnam,VN,Bình Dương
+Tam Đường,22.318124,103.626189,Vietnam,VN,Lai Châu
+Đắk Tô,14.660919,107.838901,Vietnam,VN,Kon Tum
+Mê Linh,21.183103,105.720411,Vietnam,VN,Hà Nội
+Nam Đàn,18.697993,105.498807,Vietnam,VN,Nghệ An
+Yên Mỹ,20.885573,106.035599,Vietnam,VN,Hưng Yên
+Bắc Yên,21.246264,104.432807,Vietnam,VN,Sơn La
+Hậu Nghĩa,10.894344,106.396945,Vietnam,VN,Long An
+Bộc Bố,22.612057,105.667074,Vietnam,VN,Bắc Kạn
+Thị Trấn Mèo Vạc,23.164107,105.40993,Vietnam,VN,Hà Giang
+Thị Trấn Thuận Châu,21.43849,103.689996,Vietnam,VN,Sơn La
+Kế Sách,9.767432,105.98574,Vietnam,VN,Sóc Trăng
+Vân Canh,13.619451,108.998054,Vietnam,VN,Bình Định
+Gia Nghĩa,12.00423,107.690735,Vietnam,VN,Đắk Nông
+Diêm Điền,20.558315,106.568821,Vietnam,VN,Thái Bình
+Huỳnh Hữu Nghĩa,9.635372,105.811654,Vietnam,VN,Sóc Trăng
+Hà Đông,20.97136,105.778758,Vietnam,VN,Hà Nội
+Lim,21.143881,106.020176,Vietnam,VN,Bắc Ninh
+Hàng Trạm,20.394723,105.622403,Vietnam,VN,Hòa Bình
+Liên Chiểu,16.072723,108.158147,Vietnam,VN,Đà Nẵng
+Liễu Đề,20.220945,106.187471,Vietnam,VN,Nam Định
+K Bang,14.14453,108.599078,Vietnam,VN,Gia Lai
+Phú Quý,10.5166,108.93292,Vietnam,VN,Bình Thuận
+Bình Gia,21.960937,106.364479,Vietnam,VN,Lạng Sơn
+Giồng Riềng,9.909745,105.31433,Vietnam,VN,Kiến Giang
+Nga Sơn,20.007221,105.970442,Vietnam,VN,Thanh Hóa
+An Biên,9.815325,105.063661,Vietnam,VN,Kiến Giang
+Yên Cát,19.663267,105.428537,Vietnam,VN,Thanh Hóa
+Lập Thạch,21.415394,105.460813,Vietnam,VN,Vĩnh Phúc
+Thành Phố Phủ Lý,20.545314,105.912214,Vietnam,VN,Hà Nam
+Thanh Thủy,21.175482,105.283882,Vietnam,VN,Phú Thọ
+Quán Hành,18.779274,105.645965,Vietnam,VN,Nghệ An
+Chơn Thành,11.428207,106.635361,Vietnam,VN,Bình Phước
+Chợ Mới,21.883742,105.772813,Vietnam,VN,Bắc Kạn
+Như Quỳnh,20.981671,105.984864,Vietnam,VN,Hưng Yên
+Phong Điền,9.997528,105.667298,Vietnam,VN,Cần Thơ
+Phong Điền,16.583211,107.364379,Vietnam,VN,Thừa Thiên-Huế
+Quận Bốn,10.766838,106.705742,Vietnam,VN,Hồ Chí Minh
+Prao,15.924377,107.648141,Vietnam,VN,Quảng Nam
+Hợp Hòa,21.375251,105.54256,Vietnam,VN,Vĩnh Phúc
+Thị Trấn Khánh Yên,22.089354,104.251485,Vietnam,VN,Lào Cai
+Long Phú,9.610249,106.11881,Vietnam,VN,Sóc Trăng
+Lương Sơn,20.871477,105.525676,Vietnam,VN,Hòa Bình
+Cao Thượng,21.387069,106.129314,Vietnam,VN,Bắc Giang
+Cái Dầu,10.574275,105.240052,Vietnam,VN,An Giang
+Mường Chà,21.761718,103.097826,Vietnam,VN,Điện Biên
+Thị Trấn Phố Ràng,22.234293,104.476425,Vietnam,VN,Lào Cai
+Đông Anh,21.139616,105.849263,Vietnam,VN,Hà Nội
+Kon Tum,14.354515,108.007592,Vietnam,VN,Kon Tum
+Đà Bắc,20.877145,105.254168,Vietnam,VN,Hòa Bình
+Thanh Miện,20.787139,106.246233,Vietnam,VN,Hải Dương
+Phú Xuyên,20.745486,105.913627,Vietnam,VN,Hà Nội
+Núi Đèo,20.915695,106.674396,Vietnam,VN,Hải Phòng
+Hưng Nguyên,18.671649,105.628817,Vietnam,VN,Nghệ An
+Thạnh Phú,9.948266,106.516292,Vietnam,VN,Bến Tre
+Tiên Phước,15.488195,108.307364,Vietnam,VN,Quảng Nam
+Thị Trấn Vĩnh Tuy,22.274411,104.890906,Vietnam,VN,Hà Giang
+Mỹ Lộc,20.441111,106.102378,Vietnam,VN,Nam Định
+Nho Quan,20.322787,105.751892,Vietnam,VN,Ninh Bình
+Yên Lập,21.34705,105.057393,Vietnam,VN,Phú Thọ
+Thị Trấn Gành Hào,9.031832,105.421146,Vietnam,VN,Bạc Liêu
+An Châu,21.334646,106.849344,Vietnam,VN,Bắc Giang
+Nhà Bè,10.696718,106.740321,Vietnam,VN,Hồ Chí Minh
+Cầu Giấy,21.032277,105.800734,Vietnam,VN,Hà Nội
+Minh Lương,9.902484,105.159502,Vietnam,VN,Kiến Giang
+Lang Chánh,20.156107,105.242233,Vietnam,VN,Thanh Hóa
+Mai Châu,20.661455,105.082366,Vietnam,VN,Hòa Bình
+Lương Bằng,20.740032,106.059984,Vietnam,VN,Hưng Yên
+Si Ma Cai,22.695096,104.278573,Vietnam,VN,Lào Cai
+Kiến Giang,17.223275,106.790111,Vietnam,VN,Quảng Bình
+Tân Châu,10.798321,105.238875,Vietnam,VN,An Giang
+Thạnh Mỹ,11.761653,108.494732,Vietnam,VN,Lâm Đồng
+Thị Trấn Phú Mỹ,10.603599,107.053996,Vietnam,VN,Bà Rịa-Vũng Tàu
+Thị Trấn Tam Sơn,23.067402,104.98926,Vietnam,VN,Hà Giang
+Vĩnh Bình,10.34498,106.580558,Vietnam,VN,Tiền Giang
+Mường Ảng,21.519928,103.222945,Vietnam,VN,Điện Biên
+Sông Cầu,13.455595,109.223478,Vietnam,VN,Phú Yên
+Đưc Trọng,11.735592,108.373303,Vietnam,VN,Lâm Đồng
+Bến Sung,19.631414,105.578154,Vietnam,VN,Thanh Hóa
+Đu,21.738473,105.703883,Vietnam,VN,Thái Nguyên
+Thị Trấn Ngải Giao,10.647101,107.245766,Vietnam,VN,Bà Rịa-Vũng Tàu
+Chợ Lầu,11.221584,108.507071,Vietnam,VN,Bình Thuận
+Ma Lâm,11.072972,108.129973,Vietnam,VN,Bình Thuận
+Mộc Châu,20.851994,104.621773,Vietnam,VN,Sơn La
+Thanh Hà,20.898162,106.426124,Vietnam,VN,Hải Dương
+Quán Lào,19.971534,105.651056,Vietnam,VN,Thanh Hóa
+Ea Kar,12.808161,108.449006,Vietnam,VN,Đắk Lắk
+Dầu Tiếng,11.274102,106.358793,Vietnam,VN,Bình Dương
+Thị Trấn Nước Hai,22.737383,106.152165,Vietnam,VN,Cao Bằng
+Văn Điển,20.946301,105.844998,Vietnam,VN,Hà Nội
+Vân Đình,20.735142,105.772357,Vietnam,VN,Hà Nội
+Thanh Chương,18.778767,105.33356,Vietnam,VN,Nghệ An
+Tràm Chim,10.670013,105.564687,Vietnam,VN,Đồng Tháp
+Tân Hòa,10.319057,106.711278,Vietnam,VN,Tiền Giang
+Cẩm Thủy,20.208661,105.469498,Vietnam,VN,Thanh Hóa
+Long Hồ,10.192812,106.012294,Vietnam,VN,Vĩnh Long
+Sa Pa,22.339578,103.845615,Vietnam,VN,Lào Cai
+Tân Kỳ,19.047558,105.268069,Vietnam,VN,Nghệ An
+Hạ Hòa,21.563015,105.005118,Vietnam,VN,Phú Thọ
+Sa Rài,10.870164,105.465832,Vietnam,VN,Đồng Tháp
+Thị Trấn Đông Khê,22.42939,106.431941,Vietnam,VN,Cao Bằng
+Thị Trấn Trùng Khánh,22.835136,106.524961,Vietnam,VN,Cao Bằng
+Hòa Thành,11.28696,106.129357,Vietnam,VN,Tây Ninh
+Củng Sơn,13.049985,108.978946,Vietnam,VN,Phú Yên
+Duy Xuyên,15.828983,108.259556,Vietnam,VN,Quảng Nam
+Hà Lam,15.738707,108.350623,Vietnam,VN,Quảng Nam
+Thanh Nê,20.388098,106.438336,Vietnam,VN,Thái Bình
+Thanh Xuân,20.994725,105.799768,Vietnam,VN,Hà Nội
+Hòa Vang,15.987636,108.138927,Vietnam,VN,Đà Nẵng
+Hoài Ân,14.363517,108.964763,Vietnam,VN,Bình Định
+Phú Phong,13.909637,108.919026,Vietnam,VN,Bình Định
+Thị Trấn Hòa Bình,9.28471,105.629162,Vietnam,VN,Bạc Liêu
+Long Mỹ,9.681412,105.572262,Vietnam,VN,Hậu Giang
+Hòn Đất,10.184617,104.929594,Vietnam,VN,Kiến Giang
+Thị Trấn Vị Xuyên,22.667621,104.981907,Vietnam,VN,Hà Giang
+Thị Trấn Việt Lâm,22.624859,104.959882,Vietnam,VN,Hà Giang
+Sơn Thịnh,21.56252,104.594798,Vietnam,VN,Yên Bái
+Tư Nghĩa,15.084514,108.825996,Vietnam,VN,Quảng Ngãi
+Phù Yên,21.263308,104.644389,Vietnam,VN,Sơn La
+Quảng Yên,20.942096,106.802698,Vietnam,VN,Quảng Ninh
+Con Cuông,19.049958,104.881238,Vietnam,VN,Nghệ An
+Thọ Xuân,19.931333,105.52179,Vietnam,VN,Thanh Hóa
+Đồng Nai,11.579808,107.365179,Vietnam,VN,Lâm Đồng
+Sông Mã,21.050913,103.749872,Vietnam,VN,Sơn La
+Thường Tín,20.868735,105.861248,Vietnam,VN,Hà Nội
+Kinh Môn,20.989621,106.555097,Vietnam,VN,Hải Dương
+Tiểu Cần,9.811663,106.190672,Vietnam,VN,Trà Vinh
+Quận Bảy,10.711804,106.736426,Vietnam,VN,Hồ Chí Minh
+Vĩnh An,11.089007,107.03516,Vietnam,VN,Đồng Nai
+Cao Phong,20.704457,105.32063,Vietnam,VN,Hòa Bình
+Đắk Mil,12.449568,107.622371,Vietnam,VN,Đắk Nông
+Cẩm Lệ,16.017714,108.203809,Vietnam,VN,Đà Nẵng
+Phong Châu,21.406797,105.31228,Vietnam,VN,Phú Thọ
+Lý Sơn,15.371978,109.118912,Vietnam,VN,Quảng Ngãi
+Thạnh Hóa,10.657445,106.180812,Vietnam,VN,Long An
+A Yun Pa,13.400252,108.435035,Vietnam,VN,Gia Lai
+Hương Canh,21.278823,105.646968,Vietnam,VN,Vĩnh Phúc
+Đồi Ngô,21.306263,106.386734,Vietnam,VN,Bắc Giang
+Long Khánh,10.926549,107.247827,Vietnam,VN,Đồng Nai
+Vĩnh Bảo,20.690762,106.480613,Vietnam,VN,Hải Phòng
+Sa Đéc,10.290852,105.756347,Vietnam,VN,Đồng Tháp
+Vương,20.701099,106.117515,Vietnam,VN,Hưng Yên
+Thị Trấn Sìn Hồ,22.366473,103.234381,Vietnam,VN,Lai Châu
+Hai Riêng,12.979081,108.897321,Vietnam,VN,Phú Yên
+Đông Hưng,20.556507,106.355323,Vietnam,VN,Thái Bình
+Mỹ Phước,10.477114,106.19256,Vietnam,VN,Tiền Giang
+Thắng,21.355054,105.983437,Vietnam,VN,Bắc Giang
+Trôi,21.069533,105.706464,Vietnam,VN,Hà Nội
+Mường Lát,20.529153,104.601385,Vietnam,VN,Thanh Hóa
+Điện Biên Phủ,21.385371,103.016052,Vietnam,VN,Điện Biên
+Diễn Châu,18.976519,105.600339,Vietnam,VN,Nghệ An
+Điện Bàn,15.888532,108.254471,Vietnam,VN,Quảng Nam
+Ngũ Hành Sơn,16.016178,108.253355,Vietnam,VN,Đà Nẵng
+Thị Trấn Giá Rai,9.237887,105.455237,Vietnam,VN,Bạc Liêu
+Hương Khê,18.176688,105.70019,Vietnam,VN,Hà Tĩnh
+Hoàn Kiếm,21.028573,105.850644,Vietnam,VN,Hà Nội
+Hai BàTrưng,21.013415,105.847723,Vietnam,VN,Hà Nội
+U Minh,9.412863,104.973532,Vietnam,VN,Cà Mau
+Thị Trấn Tủa Chùa,21.857713,103.342596,Vietnam,VN,Điện Biên
+Thị Trấn Tuần Giáo,21.58992,103.421787,Vietnam,VN,Điện Biên
+Hoàn Lão,17.584359,106.534247,Vietnam,VN,Quảng Bình
+Lâm Thao,21.3201,105.291555,Vietnam,VN,Phú Thọ
+Chi Nê,20.490555,105.778005,Vietnam,VN,Hòa Bình
+Tân Uyên,11.060853,106.798976,Vietnam,VN,Bình Dương
+Yên Ninh,20.183962,106.061211,Vietnam,VN,Ninh Bình
+Cái Tàu Hạ,10.259731,105.870438,Vietnam,VN,Đồng Tháp
+Kỳ Anh,18.062434,106.298319,Vietnam,VN,Hà Tĩnh
+Bồng Sơn,14.42907,109.015596,Vietnam,VN,Bình Định
+Đắk Song,12.255176,107.609239,Vietnam,VN,Đắk Nông
+Ngọc Hiển,8.657243,105.060207,Vietnam,VN,Cà Mau
+Thị Trấn Cao Lộc,21.8665,106.768327,Vietnam,VN,Lạng Sơn
+Núi Thành,15.431942,108.659463,Vietnam,VN,Quảng Nam
+Kon Plông,14.600636,108.290883,Vietnam,VN,Kon Tum
+Bình Thủy,10.074312,105.739739,Vietnam,VN,Cần Thơ
+Đoan Hùng,21.622539,105.184621,Vietnam,VN,Phú Thọ
+Bình Mỹ,20.491213,106.009549,Vietnam,VN,Hà Nam
+Ngã Sáu,9.923029,105.805421,Vietnam,VN,Hậu Giang
+Hà Tiên,10.3831,104.487534,Vietnam,VN,Kiến Giang
+Hòa Bình,19.263933,104.472318,Vietnam,VN,Nghệ An
+Ninh Hòa,12.491869,109.124955,Vietnam,VN,Khánh Hòa
+Ninh Giang,20.730831,106.397892,Vietnam,VN,Hải Dương
+Phố Châu,18.513347,105.424111,Vietnam,VN,Hà Tĩnh
+Phú Túc,13.196822,108.690425,Vietnam,VN,Gia Lai
+Củ Chi,10.973333,106.493247,Vietnam,VN,Hồ Chí Minh
+Nghĩa Hành,15.045684,108.777244,Vietnam,VN,Quảng Ngãi
+Quận Hai,10.791558,106.749475,Vietnam,VN,Hồ Chí Minh
+Cành Nàng,20.348033,105.228811,Vietnam,VN,Thanh Hóa
+Lộc Thắng,11.628362,107.835081,Vietnam,VN,Lâm Đồng
+Núi Đối,20.750778,106.668935,Vietnam,VN,Hải Phòng
+Thị Trấn Tân Yên,22.0655,105.034501,Vietnam,VN,Tuyên Quang
+Lai Châu,22.396437,103.458239,Vietnam,VN,Lai Châu
+Vĩnh Thuận,9.508016,105.257467,Vietnam,VN,Kiến Giang
+Vĩnh Tường,21.216497,105.512494,Vietnam,VN,Vĩnh Phúc
+Chúc Sơn,20.923745,105.701548,Vietnam,VN,Hà Nội
+Thị Trấn Phố Lu,22.319177,104.187186,Vietnam,VN,Lào Cai
+Yên Phú,22.732229,105.371455,Vietnam,VN,Hà Giang
+Thanh Bình,10.561903,105.484114,Vietnam,VN,Đồng Tháp
+Hóc Môn,10.889101,106.595326,Vietnam,VN,Hồ Chí Minh
+Phú Mỹ,10.592364,105.355732,Vietnam,VN,An Giang
+Quan Hóa,20.384813,105.100237,Vietnam,VN,Thanh Hóa
+Ân Thi,20.818351,106.091181,Vietnam,VN,Hưng Yên
+Gôi,20.333352,106.078261,Vietnam,VN,Nam Định
+Thị Trấn Đồng Văn,23.278408,105.362909,Vietnam,VN,Hà Giang
+Thị Trấn Vinh Quang,22.740846,104.679562,Vietnam,VN,Hà Giang
+Yên Bình,22.409891,104.579492,Vietnam,VN,Hà Giang
+Krông Kmar,12.504501,108.332877,Vietnam,VN,Đắk Lắk
+Quỳ Châu,19.552057,105.093866,Vietnam,VN,Nghệ An
+Quy Đạt,17.804592,105.970436,Vietnam,VN,Quảng Bình
+Tây Trà,15.169483,108.359978,Vietnam,VN,Quảng Ngãi
+Chợ Rã,22.451119,105.719075,Vietnam,VN,Bắc Kạn
+Bằng Lũng,22.157767,105.595591,Vietnam,VN,Bắc Kạn
+Phù Mỹ,14.171821,109.048877,Vietnam,VN,Bình Định
+Chợ Gạo,10.349835,106.463399,Vietnam,VN,Tiền Giang
+Than Uyên,21.959073,103.880012,Vietnam,VN,Lai Châu

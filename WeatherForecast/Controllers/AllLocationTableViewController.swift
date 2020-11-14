@@ -73,7 +73,7 @@ class AllLocationDataSource: UITableViewDiffableDataSource<Section,CityTempData>
         var newSnapshot = NSDiffableDataSourceSnapshot<Section,CityTempData>()
         newSnapshot.appendSections(Section.allCases)
         let cityTempDataByIsCurrentLocation : [Bool: [CityTempData]] = Dictionary(grouping: CityTempData.allCityTempData, by: \.isCurrentLocation)
-        for (isCurrentLocation, cityTempDatas) in cityTempDataByIsCurrentLocation {
+        for (_, cityTempDatas) in cityTempDataByIsCurrentLocation {
             var sortedCityTempData: [CityTempData]
             switch sortStyle {
             case .currentLocation:
