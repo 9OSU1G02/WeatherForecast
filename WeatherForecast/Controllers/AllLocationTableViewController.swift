@@ -8,13 +8,13 @@
 import UIKit
 
 enum SortStyle {
+    case currentLocation
     case cityName
     case temprature
 }
 
 enum Section: String, CaseIterable {
-    case currentLocation = "Your Location"
-    case anotherLocation = "Another Locations"
+    case main
 }
 
 class AllLocationTableViewController: UITableViewController {
@@ -38,7 +38,11 @@ class AllLocationTableViewController: UITableViewController {
         dataSource.update(sortStyle: .temprature)
         updateTintColors(tappedButton: sender)
     }
-    
+    @IBAction func sortByCurrentLocation(_ sender: UIButton) {
+        dataSource.update(sortStyle: .currentLocation)
+        updateTintColors(tappedButton: sender)
+    }
+        
     func updateTintColors(tappedButton: UIButton) {
       sortButtons.forEach { button in
         button.tintColor = button == tappedButton
@@ -55,8 +59,7 @@ class AllLocationTableViewController: UITableViewController {
           else { fatalError("Could not create BookCell") }
         cell.cityNameLabel.text = cityTempData.city
         cell.tempratureLabel.text = String(format: "%.0f", cityTempData.temp)
-        
-        cell.readMeBookmark.isHidden = !book.readMe
+        cell.currentLocationIconImage.isHidden = !cityTempData.isCurrentLocation
         return cell
       }
     }
@@ -73,18 +76,25 @@ class AllLocationDataSource: UITableViewDiffableDataSource<Section,CityTempData>
         for (isCurrentLocation, cityTempDatas) in cityTempDataByIsCurrentLocation {
             var sortedCityTempData: [CityTempData]
             switch sortStyle {
+            case .currentLocation:
+                sortedCityTempData = cityTempDatas
             case .cityName:
                 sortedCityTempData = cityTempDatas.sorted { $0.city.localizedCaseInsensitiveCompare($1.city) == .orderedAscending }
             case .temprature:
                 sortedCityTempData = cityTempDatas.sorted { $0.temp > $1.temp }
             }
-            newSnapshot.appendItems(sortedCityTempData, toSection: isCurrentLocation ? .currentLocation : .anotherLocation)
+            newSnapshot.appendItems(sortedCityTempData, toSection: .main)
         }
         apply(newSnapshot,animatingDifferences: animatingDifferences)
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        indexPath.section == snapshot().indexOfSection(.currentLocation) ? false : true
+        if let cityTempDataToEdit = itemIdentifier(for: indexPath) {
+            return !cityTempDataToEdit.isCurrentLocation
+        }
+        else {
+            return false
+        }
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -97,12 +107,7 @@ class AllLocationDataSource: UITableViewDiffableDataSource<Section,CityTempData>
     }
     
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        if indexPath.section == snapshot().indexOfSection(.currentLocation)
-        {
-          return true
-        } else {
-          return false
-        }
+        return true
     }
     
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {

@@ -22,5 +22,5 @@ class AllLocationTableViewCell: UITableViewCell {
     
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var tempratureLabel: UILabel!
-    
+    @IBOutlet weak var currentLocationIconImage: UIImageView!
 }
