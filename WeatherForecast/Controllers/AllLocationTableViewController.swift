@@ -42,7 +42,7 @@ class AllLocationTableViewController: UITableViewController {
         dataSource.update(sortStyle: .currentLocation)
         updateTintColors(tappedButton: sender)
     }
-        
+                
     func updateTintColors(tappedButton: UIButton) {
       sortButtons.forEach { button in
         button.tintColor = button == tappedButton
@@ -72,7 +72,7 @@ class AllLocationDataSource: UITableViewDiffableDataSource<Section,CityTempData>
         currentSortStyle = sortStyle
         var newSnapshot = NSDiffableDataSourceSnapshot<Section,CityTempData>()
         newSnapshot.appendSections(Section.allCases)
-        let cityTempDataByIsCurrentLocation : [Bool: [CityTempData]] = Dictionary(grouping: CityTempData.allCityTempData, by: \.isCurrentLocation)
+        let cityTempDataByIsCurrentLocation : [Bool: [CityTempData]] = Dictionary(grouping: CityTempDataManager.allCityTempData, by: \.isCurrentLocation)
         for (_, cityTempDatas) in cityTempDataByIsCurrentLocation {
             var sortedCityTempData: [CityTempData]
             switch sortStyle {
@@ -99,9 +99,8 @@ class AllLocationDataSource: UITableViewDiffableDataSource<Section,CityTempData>
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            guard let cityTempData = self.itemIdentifier(for: indexPath) else { return }
             // TODO: - Delete cityTempData from allCityTempData
-            
+            CityTempDataManager.deletecityTempData(at: indexPath.row)
             update(sortStyle: currentSortStyle)
         }
     }
@@ -121,6 +120,7 @@ class AllLocationDataSource: UITableViewDiffableDataSource<Section,CityTempData>
             return
         }
         // TODO: - Reoder cityTempData in allCityTempData
+        CityTempDataManager.reoderCityTempData(cityTempDataToMove: cityTempDataToMove, cityTempDataAtDestination: cityTempDataAtDestination)
         update(sortStyle: currentSortStyle, animatingDifferences: false)
     }
 }

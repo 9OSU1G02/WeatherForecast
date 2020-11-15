@@ -10,5 +10,4 @@ struct CityTempData : Hashable {
     var city: String!
     var temp: Double!
     var isCurrentLocation: Bool!
-    static var allCityTempData : [CityTempData] = []
 }

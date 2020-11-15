@@ -10,6 +10,7 @@ import UIKit
 class WeatherViewController: UIViewController {
     // MARK: - Properties
     let weatherView = WeatherView()
+    var shouldReload = false
     // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,3 +46,8 @@ class WeatherViewController: UIViewController {
     }
 }
 
+extension WeatherViewController: ChooseCityViewControllerDelegate {
+    func didAdd(newLocation: WeatherLocation, shouldReload: Bool) {
+        self.shouldReload = shouldReload
+    }
+ }

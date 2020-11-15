@@ -6,7 +6,9 @@
 //
 
 import UIKit
-
+protocol ChooseCityViewControllerDelegate {
+    func didAdd(newLocation: WeatherLocation,shouldReload: Bool)
+}
 class ChooseLocationTableViewController: UITableViewController {
     // MARK: - Properties
     var savedLocations: [WeatherLocation]?
@@ -14,12 +16,14 @@ class ChooseLocationTableViewController: UITableViewController {
     var allLocation : [WeatherLocation] = []
     var filterdLocations : [WeatherLocation] = []
     var vietNamLocations : [WeatherLocation] = []
-    
+    var delegate: ChooseCityViewControllerDelegate?
     // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         searchController.searchBar.delegate = self
+        setupSearchController()
         loadLocationFromUserDefaults()
+        loadLocationFromCSV()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -27,13 +31,31 @@ class ChooseLocationTableViewController: UITableViewController {
         loadLocationFromUserDefaults()
     }
     
+   // MARK: - Search Controller
+    private func setupSearchController() {
+        tableView.tableFooterView = UIView()
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        
+        //Don't obserures background when click on searchbar
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        //delegate of Search Controller ( updateSearchResults )
+        searchController.searchResultsUpdater = self
+        // FIXME:  "Does matter at current time, maybe cause a bug later"
+        definesPresentationContext = true
+    }
+    
     // MARK: - Get Location
     
     private func loadLocationFromCSV() {
-        guard let path = Bundle.main.path(forResource: "location", ofType: "csv") else {
+        guard let cityPath = Bundle.main.path(forResource: "city", ofType: "csv") else {
             fatalError("Cannot load location.csv file")
         }
-        parseCSVAt(url: URL(fileURLWithPath: path))
+        guard let vnPath = Bundle.main.path(forResource: "vn", ofType: "csv") else {
+            fatalError("Cannot load vn.csv file")
+        }
+        parseCSVAt(urls: [URL(fileURLWithPath: cityPath),URL(fileURLWithPath: vnPath)])
     }
     
     // MARK: - Table view data source
@@ -58,35 +80,49 @@ class ChooseLocationTableViewController: UITableViewController {
     
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Did select row at\(indexPath.row)")
+        self.delegate = navigationController?.viewControllers[0] as! WeatherViewController
+        if searchController.isActive && searchController.searchBar.text != ""   {
+            saveLocationToUserDefaults(location: filterdLocations[indexPath.row])
+            delegate?.didAdd(newLocation: filterdLocations[indexPath.row],shouldReload: true)
+        }
+        else {
+            saveLocationToUserDefaults(location: vietNamLocations[indexPath.row])
+            delegate?.didAdd(newLocation: vietNamLocations[indexPath.row],shouldReload: true)
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
     
     // MARK: - Parse CSV file
-    private func parseCSVAt(url: URL) {
-        do {
-            let data = try Data(contentsOf: url)
-            let dataEncoded = String(data: data, encoding: .utf8)
-            // get the line and convert to [String] by components(separatedBy: "\n")--> ["Hanoi,21.028167,105.854152,Vietnam,VN,Hà Nội" , "Haiphong,20.864807,106.683449,Vietnam,VN,Hải Phòng"] then break String element to 3 part by omponents(separatedBy: ",")
-            //---> [ [Hanoi,21.028167,105.854152,Vietnam,VN,Hà Nội], [Haiphong,20.864807,106.683449,Vietnam,VN,Hải Phòng] ]
-            if let dataArray = dataEncoded?.components(separatedBy: "\n").map({ $0.components(separatedBy: ",")}) {
-                var i = 0
-                //Skip first line ( i = 0 ) because first line useless : city,country,countryCode and line must have 3 component ( line.count > 2 )
-                for line in dataArray where line.count > 2{
-                    if i != 0 {
-                        createLocation(line: line)
+    private func parseCSVAt(urls: [URL]) {
+        var isVietNameLocation = false
+        for i in 0...urls.count - 1 {
+            isVietNameLocation = i == urls.count - 1 ? true : false
+            do {
+                let data = try Data(contentsOf: urls[i])
+                let dataEncoded = String(data: data, encoding: .utf8)
+                // get the line and convert to [String] by components(separatedBy: "\n")--> ["Hanoi,21.028167,105.854152,Vietnam,VN,Hà Nội" , "Haiphong,20.864807,106.683449,Vietnam,VN,Hải Phòng"] then break String element to 3 part by omponents(separatedBy: ",")
+                //---> [ [Hanoi,21.028167,105.854152,Vietnam,VN,Hà Nội], [Haiphong,20.864807,106.683449,Vietnam,VN,Hải Phòng] ]
+                if let dataArray = dataEncoded?.components(separatedBy: "\n").map({ $0.components(separatedBy: ",")}) {
+                    var i = 0
+                    //Skip first line ( i = 0 ) because first line useless : city,country,countryCode and line must have 3 component ( line.count > 2 )
+                    for line in dataArray where line.count > 2{
+                        if i != 0 {
+                            createLocation(line: line,isVietNameLocation: isVietNameLocation)
+                        }
+                        i += 1
                     }
-                    i += 1
                 }
+            } catch {
+                fatalError("Error reading CSV file")
             }
-        } catch {
-            fatalError("Error reading CSV file")
         }
     }
     
     //line : [Araure,Venezuela,VE]
-    private func createLocation(line: [String]) {
+    private func createLocation(line: [String],isVietNameLocation:Bool) {
         let weatherLocation = WeatherLocation(city: line[0], lat: line[1], lon: line[2], country: line[3], contryCode: line[4], adminCity: line[5], isCurrentLocation: false)
-        allLocation.append(weatherLocation)
+        isVietNameLocation ? vietNamLocations.append(weatherLocation) : allLocation.append(weatherLocation)
     }
     
     // MARK: - UserDefaults
@@ -110,17 +146,14 @@ class ChooseLocationTableViewController: UITableViewController {
             savedLocations = try? PropertyListDecoder().decode([WeatherLocation].self, from: data)
         }
     }
-    private func dismissView() {
-        searchController.dismiss(animated: true) {
-            self.navigationController?.popViewController(animated: true)
-        }
-    }
 }
+
+// MARK: - Extension
 
 extension ChooseLocationTableViewController: UISearchResultsUpdating, UISearchBarDelegate {
     func filterContentForSearchText(searchText: String, scope: String = "All") {
         filterdLocations = allLocation.filter({ (weatherLocation) -> Bool in
-            return weatherLocation.city.lowercased().contains(searchText.lowercased()) || weatherLocation.country.lowercased().contains(searchText.lowercased())
+            return weatherLocation.city.lowercased().contains(searchText.lowercased()) || weatherLocation.country.lowercased().contains(searchText.lowercased()) || weatherLocation.adminCity.lowercased().contains(searchText.lowercased())
         })
         tableView.reloadData()
     }
@@ -128,6 +161,8 @@ extension ChooseLocationTableViewController: UISearchResultsUpdating, UISearchBa
         filterContentForSearchText(searchText: searchController.searchBar.text ?? "")
     }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        dismissView()
+        searchController.dismiss(animated: true) {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 }

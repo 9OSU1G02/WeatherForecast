@@ -129,7 +129,7 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                     <state key="normal" image="add"/>
                                     <connections>
-                                        <segue destination="iTh-e6-HKZ" kind="show" id="zCt-fE-egP"/>
+                                        <segue destination="iTh-e6-HKZ" kind="show" id="82E-0k-g7j"/>
                                     </connections>
                                 </button>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="54A-Ol-dgY">
@@ -221,7 +221,9 @@
                             <outlet property="delegate" destination="g2C-fA-B6R" id="asG-ne-U7M"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="All Location" id="tvN-Mb-YTX"/>
+                    <navigationItem key="navigationItem" title="All Location" id="tvN-Mb-YTX">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="jf1-k4-tAC"/>
+                    </navigationItem>
                     <connections>
                         <outletCollection property="sortButtons" destination="PpU-aQ-G1x" collectionClass="NSMutableArray" id="3Bz-KC-hQd"/>
                         <outletCollection property="sortButtons" destination="z2g-T2-i4o" collectionClass="NSMutableArray" id="ccE-wW-8CF"/>
@@ -235,7 +237,7 @@
         <!--Search Location-->
         <scene sceneID="vp5-gE-ANL">
             <objects>
-                <tableViewController id="iTh-e6-HKZ" sceneMemberID="viewController">
+                <tableViewController id="iTh-e6-HKZ" customClass="ChooseLocationTableViewController" customModule="WeatherForecast" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vcI-Wi-11P">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
