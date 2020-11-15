@@ -135,25 +135,25 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="54A-Ol-dgY">
                                     <rect key="frame" x="20" y="7" width="271" height="30"/>
                                     <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOM-KV-Sol">
+                                            <rect key="frame" x="0.0" y="0.0" width="115" height="30"/>
+                                            <state key="normal" title="Current Location"/>
+                                            <connections>
+                                                <action selector="sortByCurrentLocation:" destination="g2C-fA-B6R" eventType="touchUpInside" id="wYe-Um-0cd"/>
+                                            </connections>
+                                        </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z2g-T2-i4o">
-                                            <rect key="frame" x="0.0" y="0.0" width="41" height="30"/>
+                                            <rect key="frame" x="133" y="0.0" width="41" height="30"/>
                                             <state key="normal" title="Name"/>
                                             <connections>
                                                 <action selector="sortByCityName:" destination="g2C-fA-B6R" eventType="touchUpInside" id="FLs-hQ-R7T"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PpU-aQ-G1x">
-                                            <rect key="frame" x="59" y="0.0" width="79" height="30"/>
+                                            <rect key="frame" x="192" y="0.0" width="79" height="30"/>
                                             <state key="normal" title="Temprature"/>
                                             <connections>
                                                 <action selector="sortByTemprature:" destination="g2C-fA-B6R" eventType="touchUpInside" id="ctl-nx-L3e"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOM-KV-Sol">
-                                            <rect key="frame" x="156" y="0.0" width="115" height="30"/>
-                                            <state key="normal" title="Current Location"/>
-                                            <connections>
-                                                <action selector="sortByCurrentLocation:" destination="g2C-fA-B6R" eventType="touchUpInside" id="wYe-Um-0cd"/>
                                             </connections>
                                         </button>
                                     </subviews>

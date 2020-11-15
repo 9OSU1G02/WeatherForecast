@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum SortStyle {
+enum SortStyle: Int {
     case currentLocation
     case cityName
     case temprature
@@ -20,9 +20,32 @@ enum Section: String, CaseIterable {
 class AllLocationTableViewController: UITableViewController {
     // MARK: - Properties
     var dataSource: AllLocationDataSource!
+    var sortStyle: SortStyle!
+    
+    // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationItem.rightBarButtonItem = editButtonItem
+        loadSortStyleFromUserDefaults()
+        configureDataSource()
+        dataSource.update(sortStyle: sortStyle)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        dataSource.update(sortStyle: sortStyle)
+    }
+    // MARK: - UserDefaults
+    private func saveSortStyleInUserDefaults(rawValue: Int ) {
+        UserDefaults.standard.setValue(rawValue, forKey: KEY_SORT_STYLE)
+    }
+    
+    private func loadSortStyleFromUserDefaults() {
+        if let rawValue = UserDefaults.standard.value(forKey: KEY_SORT_STYLE) as? Int {
+            sortStyle = SortStyle(rawValue: rawValue)
+        }
+        else {
+            sortStyle = SortStyle.currentLocation
+        }
     }
     
     // MARK: - IBOutlets
@@ -30,19 +53,22 @@ class AllLocationTableViewController: UITableViewController {
     @IBOutlet var sortButtons: [UIButton]!
     
     // MARK: - IBActions
+    @IBAction func sortByCurrentLocation(_ sender: UIButton) {
+        dataSource.update(sortStyle: .currentLocation)
+        updateTintColors(tappedButton: sender)
+        saveSortStyleInUserDefaults(rawValue: 0)
+    }
     @IBAction func sortByCityName(_ sender: UIButton) {
         dataSource.update(sortStyle: .cityName)
         updateTintColors(tappedButton: sender)
+        saveSortStyleInUserDefaults(rawValue: 1)
     }
     @IBAction func sortByTemprature(_ sender: UIButton) {
         dataSource.update(sortStyle: .temprature)
         updateTintColors(tappedButton: sender)
+        saveSortStyleInUserDefaults(rawValue: 2)
     }
-    @IBAction func sortByCurrentLocation(_ sender: UIButton) {
-        dataSource.update(sortStyle: .currentLocation)
-        updateTintColors(tappedButton: sender)
-    }
-                
+                    
     func updateTintColors(tappedButton: UIButton) {
       sortButtons.forEach { button in
         button.tintColor = button == tappedButton
@@ -67,7 +93,7 @@ class AllLocationTableViewController: UITableViewController {
 
 
 class AllLocationDataSource: UITableViewDiffableDataSource<Section,CityTempData> {
-    var currentSortStyle : SortStyle = .cityName
+    var currentSortStyle : SortStyle = .currentLocation
     func update(sortStyle: SortStyle, animatingDifferences: Bool = true) {
         currentSortStyle = sortStyle
         var newSnapshot = NSDiffableDataSourceSnapshot<Section,CityTempData>()
