@@ -14,17 +14,21 @@ class WeatherLocationManger {
         }
         return try! PropertyListDecoder().decode([WeatherLocation].self, from: data)
     }
-    private static var _allWeatherLocation = allWeatherLocation
-    static func saveWeatherLocationToUserDefautls() {
+   
+    static func saveWeatherLocationToUserDefautls(allWeatherLocation: [WeatherLocation]) {
+        let _allWeatherLocation = allWeatherLocation
         UserDefaults.standard.set(try? PropertyListEncoder().encode(_allWeatherLocation), forKey: KEY_LOCATIONS)
     }
     
     static func deleteWeatherLocation(index: Int) {
+        var _allWeatherLocation = allWeatherLocation
         _allWeatherLocation.remove(at: index)
-        saveWeatherLocationToUserDefautls()
+        saveWeatherLocationToUserDefautls(allWeatherLocation: _allWeatherLocation)
     }
     
     static func reoderWeatherLocation(indexOfWeatherLocationToMove:Int, indexOfWeatherLocationDestination: Int) {
+        var _allWeatherLocation = allWeatherLocation
         _allWeatherLocation.swapAt(indexOfWeatherLocationToMove, indexOfWeatherLocationDestination)
+        saveWeatherLocationToUserDefautls(allWeatherLocation: _allWeatherLocation)
     }
 }
