@@ -20,3 +20,5 @@ func getWeatherIconFor(_ type: String) -> UIImage {
     let icon = UIImage(named: type) ?? UIImage(systemName: "questionmark")!
     return icon
 }
+
+

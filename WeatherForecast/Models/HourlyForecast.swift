@@ -41,8 +41,15 @@ class HourlyForecast {
         self._date = DateFromUnix(unixDate: json["ts"].double)
         self._weatherIcon = json["weather"]["icon"].stringValue
     }
-    class func downloadHourlyForecastWeather(compeltion: @escaping (_ hourlyForecast: [HourlyForecast]) -> Void) {
-        var parameters = ["lat" : "20.9977344", "lon" : "105.8701312", "key" : "ca313af990e94174bab2912d60a680ce"]
+    class func downloadHourlyForecastWeather(location: WeatherLocation ,compeltion: @escaping (_ hourlyForecast: [HourlyForecast]) -> Void) {
+        var parameters : [String:String] = [:]
+        if !location.isCurrentLocation {
+            //%@ arguments will be replace by location.city and location.countryCode
+            parameters = ["lat" : location.lat , "lon" : location.lon, "key" : "ca313af990e94174bab2912d60a680ce"]
+        }
+        else {
+            parameters = ["lat" : String(LocationService.shared.latitude) , "lon" : String(LocationService.shared.longtitude), "key" : "ca313af990e94174bab2912d60a680ce"]
+        }
         var hourlyForecasts : [HourlyForecast] = []
         AF.request("https://api.weatherbit.io/v2.0/forecast/hourly?hours=24",parameters: parameters).responseJSON { (reponse) in
             guard let result = reponse.value
@@ -50,7 +57,6 @@ class HourlyForecast {
                 compeltion(hourlyForecasts)
                 return
             }
-            
             if let dictionary = result as? Dictionary<String,AnyObject> {
                 if let list = dictionary["data"] as? [Dictionary<String,AnyObject>] {
                     for item in list {

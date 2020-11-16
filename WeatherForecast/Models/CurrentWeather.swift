@@ -105,11 +105,18 @@ class CurrentWeather {
         }
         return _visibility
     }
-    func getCurrentWeather(_ completion: @escaping (Bool) -> Void) {
-        var parameters = ["lat" : "20.9977344" , "lon" : "105.8701312", "key" : "ca313af990e94174bab2912d60a680ce"]
-        
+    func getCurrentWeather(location: WeatherLocation ,_ completion: @escaping (Bool) -> Void) {
+        var parameters : [String:String] = [:]
+        if !location.isCurrentLocation {
+            //%@ arguments will be replace by location.city and location.countryCode
+            parameters = ["lat" : location.lat , "lon" : location.lon, "key" : "ca313af990e94174bab2912d60a680ce"]
+        }
+        else {
+            parameters = ["lat" : String(LocationService.shared.latitude) , "lon" : String(LocationService.shared.longtitude), "key" : "ca313af990e94174bab2912d60a680ce"]
+        }
         AF.request("https://api.weatherbit.io/v2.0/current",parameters: parameters).responseJSON { response in
             guard let result = response.value else {
+                self._city = location.city
                 completion(false)
                 return
             }

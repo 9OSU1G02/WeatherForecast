@@ -7,7 +7,7 @@
 
 import UIKit
 protocol ChooseCityViewControllerDelegate {
-    func didAdd(newLocation: WeatherLocation,shouldReload: Bool)
+    func didAdd(shouldReload: Bool)
 }
 class ChooseLocationTableViewController: UITableViewController {
     // MARK: - Properties
@@ -83,11 +83,11 @@ class ChooseLocationTableViewController: UITableViewController {
         self.delegate = navigationController?.viewControllers[0] as! WeatherViewController
         if searchController.isActive && searchController.searchBar.text != ""   {
             saveLocationToUserDefaults(location: filterdLocations[indexPath.row])
-            delegate?.didAdd(newLocation: filterdLocations[indexPath.row],shouldReload: true)
+            delegate?.didAdd(shouldReload: true)
         }
         else {
             saveLocationToUserDefaults(location: vietNamLocations[indexPath.row])
-            delegate?.didAdd(newLocation: vietNamLocations[indexPath.row],shouldReload: true)
+            delegate?.didAdd(shouldReload: true)
         }
         tableView.deselectRow(at: indexPath, animated: true)
         navigationController?.popToRootViewController(animated: true)

@@ -13,6 +13,7 @@ class WeatherView: UIView {
     var weeklyForecastData: [WeeklyForecast] = []
     var hourlyForecastData: [HourlyForecast] = []
     var weatherInfoData: [WeatherInfo] = []
+    var isCurrentLocation:Bool!
     @IBOutlet var mainView: UIView!
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -27,10 +28,11 @@ class WeatherView: UIView {
         super.init(frame: frame)
         mainInit()
     }
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         mainInit()
-    }
+            }
     
     //Working with xib you have to setup view manually
     private func mainInit() {
