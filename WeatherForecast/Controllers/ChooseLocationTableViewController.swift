@@ -83,14 +83,17 @@ class ChooseLocationTableViewController: UITableViewController {
         self.delegate = navigationController?.viewControllers[0] as! WeatherViewController
         if searchController.isActive && searchController.searchBar.text != ""   {
             saveLocationToUserDefaults(location: filterdLocations[indexPath.row])
+            tableView.deselectRow(at: indexPath, animated: true)
+            navigationController?.popToRootViewController(animated: true)
             delegate?.didAdd(shouldReload: true)
         }
         else {
             saveLocationToUserDefaults(location: vietNamLocations[indexPath.row])
+            tableView.deselectRow(at: indexPath, animated: true)
+            navigationController?.popToRootViewController(animated: true)
             delegate?.didAdd(shouldReload: true)
         }
-        tableView.deselectRow(at: indexPath, animated: true)
-        navigationController?.popToRootViewController(animated: true)
+        
     }
     
     // MARK: - Parse CSV file

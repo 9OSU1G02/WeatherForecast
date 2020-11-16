@@ -15,5 +15,6 @@ class CityTempDataManager {
     static func reoderCityTempData(IndexOfCityTempDataToMove: Int, IndexOfCityTempDataDestination: Int) {
         allCityTempData.swapAt(IndexOfCityTempDataToMove, IndexOfCityTempDataDestination)
     }
+    
 }
     

@@ -9,9 +9,11 @@ import UIKit
 
 protocol AllLocationTableViewControllerDelegate {
     func didChooseLocation(atIndex: Int, shouldReload: Bool)
+    func didSortLocation(shouldReload:Bool)
 }
 
 enum SortStyle: Int {
+    case userEdited
     case currentLocation
     case cityName
     case temprature
@@ -22,10 +24,6 @@ enum Section: String, CaseIterable {
 }
 
 class AllLocationTableViewController: UITableViewController{
-    func didEditRow(shouldReload: Bool) {
-        self.shouldReload = shouldReload
-    }
-    
     // MARK: - Properties
     var dataSource: AllLocationDataSource!
     var sortStyle: SortStyle!
@@ -38,6 +36,11 @@ class AllLocationTableViewController: UITableViewController{
         loadSortStyleFromUserDefaults()
         configureDataSource()
         dataSource.update(sortStyle: sortStyle)
+    }
+    
+    override func willMove(toParent parent: UIViewController?) {
+        super.willMove(toParent: parent)
+        delegate?.didSortLocation(shouldReload: shouldReload)
     }
     
     // MARK: - UserDefaults
@@ -62,24 +65,24 @@ class AllLocationTableViewController: UITableViewController{
     @IBAction func sortByCurrentLocation(_ sender: UIButton) {
         dataSource.update(sortStyle: .currentLocation)
         updateTintColors(tappedButton: sender)
-        saveSortStyleInUserDefaults(rawValue: 0)
-        if sortStyle.rawValue != 0 {
+        saveSortStyleInUserDefaults(rawValue: 1)
+        if sortStyle.rawValue != 1 {
             shouldReload = true
         }
     }
     @IBAction func sortByCityName(_ sender: UIButton) {
         dataSource.update(sortStyle: .cityName)
         updateTintColors(tappedButton: sender)
-        saveSortStyleInUserDefaults(rawValue: 1)
-        if sortStyle.rawValue != 1 {
+        saveSortStyleInUserDefaults(rawValue: 2)
+        if sortStyle.rawValue != 2 {
             shouldReload = true
         }
     }
     @IBAction func sortByTemprature(_ sender: UIButton) {
         dataSource.update(sortStyle: .temprature)
         updateTintColors(tappedButton: sender)
-        saveSortStyleInUserDefaults(rawValue: 2)
-        if sortStyle.rawValue != 2 {
+        saveSortStyleInUserDefaults(rawValue: 3)
+        if sortStyle.rawValue != 3 {
             shouldReload = true
         }
     }
@@ -103,6 +106,7 @@ class AllLocationTableViewController: UITableViewController{
             cell.currentLocationIconImage.isHidden = !cityTempData.isCurrentLocation
             return cell
         }
+        dataSource.delegate = self
     }
     
     // MARK: - Delegate
@@ -111,30 +115,41 @@ class AllLocationTableViewController: UITableViewController{
         navigationController?.popViewController(animated: true)
         delegate?.didChooseLocation(atIndex: indexPath.row, shouldReload: shouldReload)
     }
+        
+}
+
+
+extension AllLocationTableViewController: AllLocationDataSourceDelegate {
+    func didEditRow(shouldReload: Bool) {
+        self.shouldReload = shouldReload
+    }
+}
+
+protocol AllLocationDataSourceDelegate {
+    func didEditRow(shouldReload: Bool)
 }
 
 class AllLocationDataSource: UITableViewDiffableDataSource<Section,CityTempData> {
-    
-    var currentSortStyle : SortStyle = .currentLocation
+    var delegate: AllLocationDataSourceDelegate?
+    var currentSortStyle : SortStyle = .userEdited
     func update(sortStyle: SortStyle, animatingDifferences: Bool = true) {
         currentSortStyle = sortStyle
         var newSnapshot = NSDiffableDataSourceSnapshot<Section,CityTempData>()
         newSnapshot.appendSections(Section.allCases)
-        let cityTempDataByIsCurrentLocation : [Bool: [CityTempData]] = Dictionary(grouping: CityTempDataManager.allCityTempData, by: \.isCurrentLocation)
-        
-        for (_, cityTempDatas) in cityTempDataByIsCurrentLocation {
-            var sortedCityTempData: [CityTempData]
-            switch sortStyle {
-            case .currentLocation:
-                sortedCityTempData = cityTempDatas
-            case .cityName:
-                sortedCityTempData = cityTempDatas.sorted { $0.city.localizedCaseInsensitiveCompare($1.city) == .orderedAscending }
-            case .temprature:
-                sortedCityTempData = cityTempDatas.sorted { $0.temp > $1.temp }
+        switch sortStyle {
+        case .userEdited:
+            break
+        case .currentLocation:
+            let currentLocationCityTempDataIndex = CityTempDataManager.allCityTempData.firstIndex { (cityTempData) -> Bool in
+                cityTempData.isCurrentLocation == true
             }
-            newSnapshot.appendItems(sortedCityTempData, toSection: .main)
+            CityTempDataManager.allCityTempData.swapAt(0, currentLocationCityTempDataIndex!)
+        case .cityName:
+            CityTempDataManager.allCityTempData.sort{$0.city.localizedCaseInsensitiveCompare($1.city) == .orderedAscending}
+        case .temprature:
+            CityTempDataManager.allCityTempData.sort {$0.temp > $1.temp }
         }
-        
+        newSnapshot.appendItems(CityTempDataManager.allCityTempData, toSection: .main)
         apply(newSnapshot,animatingDifferences: animatingDifferences)
     }
     
@@ -153,9 +168,11 @@ class AllLocationDataSource: UITableViewDiffableDataSource<Section,CityTempData>
             // Delete cityTempData from allCityTempData
             CityTempDataManager.deletecityTempData(at: indexPath.row)
             // TODO: - Delete weatherLocation from userDefaults
+            // - 1 because
             WeatherLocationManger.deleteWeatherLocation(index: indexPath.row)
             update(sortStyle: currentSortStyle)
         }
+        delegate?.didEditRow(shouldReload: true)
     }
     
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
@@ -175,6 +192,7 @@ class AllLocationDataSource: UITableViewDiffableDataSource<Section,CityTempData>
         // Reoder weatherLocation in userDefault
         WeatherLocationManger.reoderWeatherLocation(indexOfWeatherLocationToMove: sourceIndexPath.row, indexOfWeatherLocationDestination: destinationIndexPath.row)
         update(sortStyle: currentSortStyle, animatingDifferences: false)
+        delegate?.didEditRow(shouldReload: true)
     }
 }
 

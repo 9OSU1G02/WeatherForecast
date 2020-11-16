@@ -27,7 +27,8 @@ class WeatherViewController: UIViewController {
     }
     
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         //If shouldRefrsh = true --> remove all data and get it again by call getWeather()
         if shouldReload {
             CityTempDataManager.allCityTempData = []
@@ -119,16 +120,21 @@ class WeatherViewController: UIViewController {
     private func loadLocationFromUserDefaults() {
         //city, country, countryCode will be apply later
         let currentLocation = WeatherLocation(city: "", lat: "", lon: "", country: "", contryCode: "", adminCity: "", isCurrentLocation: true)
-        if let data = UserDefaults.standard.value(forKey: "Locations") as? Data {
+        if let data = UserDefaults.standard.value(forKey: KEY_LOCATIONS) as? Data {
             guard var allLocations = try? PropertyListDecoder().decode([WeatherLocation].self, from: data) else { fatalError("Cannot Decode location from user default") }
-            //current location allways at the first index
-            allLocations.insert(currentLocation, at: 0)
+            
+            //Get index of currentLocation
+            let indexOfCurrentLocation = allLocations.firstIndex { (weatherLocation) -> Bool in
+                weatherLocation.isCurrentLocation == true
+            }
+            allLocations[indexOfCurrentLocation!] = currentLocation
             self.allLocations = allLocations
         }
         else {
-            print("no user data in user defaults")
+            //No data in UserDefaults
             allLocations.append(currentLocation)
         }
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(allLocations), forKey: "Locations")
     }
     
     // MARK: - PageControl
@@ -219,10 +225,10 @@ extension WeatherViewController: UIScrollViewDelegate {
 }
 
 extension WeatherViewController: AllLocationTableViewControllerDelegate {
-    func didPopViewController(shouldReload: Bool) {
+    func didSortLocation(shouldReload: Bool) {
         self.shouldReload = shouldReload
     }
-            
+                  
     func didChooseLocation(atIndex: Int, shouldReload: Bool) {
         let viewNumber = CGFloat(integerLiteral: atIndex)
         let newOffset = CGPoint(x: currentWeatherScrollView.frame.width * viewNumber, y: 0)
@@ -232,3 +238,4 @@ extension WeatherViewController: AllLocationTableViewControllerDelegate {
         self.shouldReload = shouldReload
     }
 }
+
