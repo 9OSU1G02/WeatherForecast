@@ -64,41 +64,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKk-dw-XwR">
-                                <rect key="frame" x="0.0" y="88" width="414" height="676"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="715"/>
                             </scrollView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K4P-ae-gE3">
-                                <rect key="frame" x="0.0" y="764" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="803" width="414" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="hxU-eA-faM"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="QK3-Ee-09Y"/>
                                     <barButtonItem style="plain" id="Q8w-dX-b4y">
                                         <pageControl key="customView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="STK-Ep-OpI">
-                                            <rect key="frame" x="145.5" y="13" width="123" height="28"/>
+                                            <rect key="frame" x="145.5" y="0.0" width="123" height="10"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="currentPageIndicatorTintColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </pageControl>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="UVq-Sc-1Gs"/>
-                                    <barButtonItem systemItem="add" id="ej3-rS-kaz">
-                                        <connections>
-                                            <segue destination="g2C-fA-B6R" kind="show" identifier="allLocationSegue" id="OFS-Ud-wLu"/>
-                                        </connections>
-                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lKk-dw-XwR" secondAttribute="trailing" id="4bz-hh-3sb"/>
-                            <constraint firstItem="K4P-ae-gE3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="6iV-HN-yMg"/>
-                            <constraint firstItem="K4P-ae-gE3" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="7oa-QF-wfM"/>
-                            <constraint firstItem="lKk-dw-XwR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="TpQ-jU-QZV"/>
-                            <constraint firstItem="K4P-ae-gE3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UBg-3B-54d"/>
-                            <constraint firstItem="lKk-dw-XwR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="V99-mN-Nkn"/>
-                            <constraint firstItem="K4P-ae-gE3" firstAttribute="top" secondItem="lKk-dw-XwR" secondAttribute="bottom" id="ueR-vQ-Fcw"/>
+                            <constraint firstItem="K4P-ae-gE3" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="5eZ-yC-vFa"/>
+                            <constraint firstItem="lKk-dw-XwR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EpF-DK-iS3"/>
+                            <constraint firstItem="lKk-dw-XwR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GP8-5Y-4iy"/>
+                            <constraint firstItem="K4P-ae-gE3" firstAttribute="top" secondItem="lKk-dw-XwR" secondAttribute="bottom" id="LX0-Pw-BhI"/>
+                            <constraint firstItem="K4P-ae-gE3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZAc-eH-DWY"/>
+                            <constraint firstItem="K4P-ae-gE3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gp1-4I-aAh"/>
+                            <constraint firstItem="lKk-dw-XwR" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xma-OL-sD0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Current Weather" id="CLc-go-Drf"/>
+                    <navigationItem key="navigationItem" title="Current Weather" id="CLc-go-Drf">
+                        <barButtonItem key="rightBarButtonItem" image="plus.circle" catalog="system" id="ej3-rS-kaz">
+                            <connections>
+                                <segue destination="g2C-fA-B6R" kind="show" identifier="allLocationSegue" id="OFS-Ud-wLu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="currentWeatherScrollView" destination="lKk-dw-XwR" id="IKO-Um-hhv"/>
                         <outlet property="pageControl" destination="STK-Ep-OpI" id="v1L-Mg-oAH"/>
@@ -106,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="382.60869565217394" y="-301.33928571428572"/>
+            <point key="canvasLocation" x="84" y="-301"/>
         </scene>
         <!--All Location-->
         <scene sceneID="nZt-jG-MxS">
@@ -228,7 +232,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EWj-9d-4RV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1102.8985507246377" y="-301.33928571428572"/>
+            <point key="canvasLocation" x="861" y="-301"/>
         </scene>
         <!--Search Location-->
         <scene sceneID="vp5-gE-ANL">
@@ -307,6 +311,7 @@
         <image name="cloud.sun" catalog="system" width="128" height="93"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="location" width="320" height="320"/>
+        <image name="plus.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

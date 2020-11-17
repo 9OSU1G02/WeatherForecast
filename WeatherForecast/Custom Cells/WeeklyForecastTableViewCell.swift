@@ -25,7 +25,7 @@ class WeeklyForecastTableViewCell: UITableViewCell {
     @IBOutlet weak var tempLabel: UILabel!
     
     func config(weeklyForecast : WeeklyForecast) {
-        dayOfWeekLabel.text = weeklyForecast.date.time()
+        dayOfWeekLabel.text = weeklyForecast.date.dayOfTheWeek()
         weatherIconImageView.image = getWeatherIconFor(weeklyForecast.weatherIcon)
         tempLabel.text = String(format: "%.0f", weeklyForecast.temp)
     }
