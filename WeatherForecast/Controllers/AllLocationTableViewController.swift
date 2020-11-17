@@ -120,13 +120,21 @@ class AllLocationTableViewController: UITableViewController{
 
 
 extension AllLocationTableViewController: AllLocationDataSourceDelegate {
+    func didChooseDeleteCurrentLocation() {
+        let alert = UIAlertController(title: nil, message: "You can't delete your current location", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+        present(alert, animated: true, completion: nil)
+    }
+                
     func didEditRow(shouldReload: Bool) {
         self.shouldReload = shouldReload
     }
+    
 }
 
 protocol AllLocationDataSourceDelegate {
     func didEditRow(shouldReload: Bool)
+    func didChooseDeleteCurrentLocation()
 }
 
 class AllLocationDataSource: UITableViewDiffableDataSource<Section,CityTempData> {
@@ -147,24 +155,24 @@ class AllLocationDataSource: UITableViewDiffableDataSource<Section,CityTempData>
         case .cityName:
             CityTempDataManager.allCityTempData.sort{$0.city.localizedCaseInsensitiveCompare($1.city) == .orderedAscending}
         case .temprature:
-            CityTempDataManager.allCityTempData.sort {$0.temp > $1.temp }
+            CityTempDataManager.allCityTempData.sort {$0.temp < $1.temp }
         }
+        WeatherLocationManger.sortWeatherLocation(by: sortStyle)
         newSnapshot.appendItems(CityTempDataManager.allCityTempData, toSection: .main)
         apply(newSnapshot,animatingDifferences: animatingDifferences)
     }
     
     // MARK: - Delegate
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        if let cityTempDataToEdit = itemIdentifier(for: indexPath) {
-            return !cityTempDataToEdit.isCurrentLocation
-        }
-        else {
-            return false
-        }
+        return true
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            if itemIdentifier(for: indexPath)!.isCurrentLocation {
+                delegate?.didChooseDeleteCurrentLocation()
+                return
+            }
             // Delete cityTempData from allCityTempData
             CityTempDataManager.deletecityTempData(at: indexPath.row)
             // TODO: - Delete weatherLocation from userDefaults
@@ -181,8 +189,7 @@ class AllLocationDataSource: UITableViewDiffableDataSource<Section,CityTempData>
     
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         guard
-            sourceIndexPath != destinationIndexPath,
-            sourceIndexPath.section == destinationIndexPath.section
+            sourceIndexPath != destinationIndexPath
         else {
             apply(snapshot(), animatingDifferences: false)
             return
@@ -191,7 +198,9 @@ class AllLocationDataSource: UITableViewDiffableDataSource<Section,CityTempData>
         CityTempDataManager.reoderCityTempData(IndexOfCityTempDataToMove: sourceIndexPath.row, IndexOfCityTempDataDestination: destinationIndexPath.row)
         // Reoder weatherLocation in userDefault
         WeatherLocationManger.reoderWeatherLocation(indexOfWeatherLocationToMove: sourceIndexPath.row, indexOfWeatherLocationDestination: destinationIndexPath.row)
-        update(sortStyle: currentSortStyle, animatingDifferences: false)
+        update(sortStyle: .userEdited, animatingDifferences: false)
+        //save user edit sort Style
+        UserDefaults.standard.setValue(0, forKey: KEY_SORT_STYLE)
         delegate?.didEditRow(shouldReload: true)
     }
 }

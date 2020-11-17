@@ -7,7 +7,7 @@
 
 import UIKit
 protocol ChooseCityViewControllerDelegate {
-    func didAdd(shouldReload: Bool)
+    func didAdd(indexOffset: Int,shouldReload: Bool)
 }
 class ChooseLocationTableViewController: UITableViewController {
     // MARK: - Properties
@@ -85,13 +85,13 @@ class ChooseLocationTableViewController: UITableViewController {
             saveLocationToUserDefaults(location: filterdLocations[indexPath.row])
             tableView.deselectRow(at: indexPath, animated: true)
             navigationController?.popToRootViewController(animated: true)
-            delegate?.didAdd(shouldReload: true)
+            delegate?.didAdd(indexOffset: savedLocations!.count - 1, shouldReload: true)
         }
         else {
             saveLocationToUserDefaults(location: vietNamLocations[indexPath.row])
             tableView.deselectRow(at: indexPath, animated: true)
             navigationController?.popToRootViewController(animated: true)
-            delegate?.didAdd(shouldReload: true)
+            delegate?.didAdd(indexOffset: savedLocations!.count - 1, shouldReload: true)
         }
         
     }
@@ -141,8 +141,8 @@ class ChooseLocationTableViewController: UITableViewController {
             savedLocations = [location]
         }
         //save savedLocations to user default
-        UserDefaults.standard.set(try? PropertyListEncoder().encode(savedLocations!), forKey: "Locations")
-    }
+        WeatherLocationManger.saveWeatherLocationToUserDefautls(allWeatherLocation: savedLocations!)
+        }
     
     private func loadLocationFromUserDefaults() {
         if let data = UserDefaults.standard.value(forKey: "Locations") as? Data {

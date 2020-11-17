@@ -201,6 +201,7 @@ class WeatherViewController: UIViewController {
         if segue.identifier == "allLocationSegue" {
             guard let vc = segue.destination as? AllLocationTableViewController else { fatalError("Can found allLocationSegue ")}
             vc.delegate = self
+            vc.shouldReload = shouldReload
         }
     }
 }
@@ -210,10 +211,15 @@ extension WeatherViewController: CLLocationManagerDelegate {
 }
 
 extension WeatherViewController: ChooseCityViewControllerDelegate {
-    func didAdd(shouldReload: Bool) {
+    func didAdd(indexOffset: Int, shouldReload: Bool) {
+        let viewNumber = CGFloat(integerLiteral: indexOffset)
+        let newOffset = CGPoint(x: currentWeatherScrollView.frame.width * viewNumber, y: 0)
+        // eg: index 1 --> currentWeatherScrollView will display at x = currentWeatherScrollView.frame.width (414) * 1 ---> x the same with x of where second wether view ---> dispay second view
+        currentWeatherScrollView.setContentOffset(newOffset, animated: true)
+        updatePageControlSelectedPage(currentPage: indexOffset)
         self.shouldReload = shouldReload
     }
- }
+        }
 
 extension WeatherViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
