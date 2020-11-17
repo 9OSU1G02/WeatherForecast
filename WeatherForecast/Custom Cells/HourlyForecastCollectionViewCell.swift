@@ -19,6 +19,6 @@ class HourlyForecastCollectionViewCell: UICollectionViewCell {
     func config(hourlyForecast: HourlyForecast) {
         timeLabel.text = hourlyForecast.date.time()
         weatherIconImageView.image = getWeatherIconFor(hourlyForecast.weatherIcon)
-        tempLabel.text = String(format: "%.0f", hourlyForecast.temp)
+        tempLabel.text = String(format: "%.0f%@", hourlyForecast.temp, returnRawValueTempFormatIconFromUserDefaults())
     }
 }

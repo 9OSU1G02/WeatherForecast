@@ -27,6 +27,8 @@
 		B60AD405255E59AF00293FD9 /* HourlyForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AD404255E59AF00293FD9 /* HourlyForecast.swift */; };
 		B60AD408255E5E6100293FD9 /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AD407255E5E6100293FD9 /* WeatherInfo.swift */; };
 		B60AD40B255E5E9600293FD9 /* WeeklyForcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60AD40A255E5E9600293FD9 /* WeeklyForcast.swift */; };
+		B621E4182564197E00BAE295 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B621E4172564197E00BAE295 /* SettingTableViewController.swift */; };
+		B621E41B256421CA00BAE295 /* TempFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B621E41A256421CA00BAE295 /* TempFormat.swift */; };
 		B62A2B27255EE80000FB0DB5 /* AllLocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A2B26255EE80000FB0DB5 /* AllLocationTableViewController.swift */; };
 		B62A2B2A255EEA8200FB0DB5 /* CityTempData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A2B29255EEA8200FB0DB5 /* CityTempData.swift */; };
 		B62A2B2E255EFDAA00FB0DB5 /* AllLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62A2B2D255EFDAA00FB0DB5 /* AllLocationTableViewCell.swift */; };
@@ -67,6 +69,8 @@
 		B60AD404255E59AF00293FD9 /* HourlyForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecast.swift; sourceTree = "<group>"; };
 		B60AD407255E5E6100293FD9 /* WeatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfo.swift; sourceTree = "<group>"; };
 		B60AD40A255E5E9600293FD9 /* WeeklyForcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyForcast.swift; sourceTree = "<group>"; };
+		B621E4172564197E00BAE295 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		B621E41A256421CA00BAE295 /* TempFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempFormat.swift; sourceTree = "<group>"; };
 		B62A2B26255EE80000FB0DB5 /* AllLocationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllLocationTableViewController.swift; sourceTree = "<group>"; };
 		B62A2B29255EEA8200FB0DB5 /* CityTempData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTempData.swift; sourceTree = "<group>"; };
 		B62A2B2D255EFDAA00FB0DB5 /* AllLocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllLocationTableViewCell.swift; sourceTree = "<group>"; };
@@ -161,6 +165,7 @@
 				B62A2B29255EEA8200FB0DB5 /* CityTempData.swift */,
 				B62A3C622560FA9B00DFC6E6 /* CityTempDataManager.swift */,
 				B6C72C6625621AC900B83364 /* WeatherLocationManager.swift */,
+				B621E41A256421CA00BAE295 /* TempFormat.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 				B60AD37E255E283C00293FD9 /* WeatherViewController.swift */,
 				B62A2B26255EE80000FB0DB5 /* AllLocationTableViewController.swift */,
 				B668506F255FDA36006951E1 /* ChooseLocationTableViewController.swift */,
+				B621E4172564197E00BAE295 /* SettingTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -337,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B621E4182564197E00BAE295 /* SettingTableViewController.swift in Sources */,
 				B60AD3AB255E3C5500293FD9 /* Extensions.swift in Sources */,
 				B62A3C632560FA9B00DFC6E6 /* CityTempDataManager.swift in Sources */,
 				B6E33F6E255EA27200D1D837 /* WeatherLocation.swift in Sources */,
@@ -345,6 +352,7 @@
 				B60AD3E9255E4D1C00293FD9 /* HourlyForecastCollectionViewCell.swift in Sources */,
 				B60AD3FF255E4EB800293FD9 /* WeeklyForecastTableViewCell.swift in Sources */,
 				B60AD3AE255E3C6700293FD9 /* GlobalFunctions.swift in Sources */,
+				B621E41B256421CA00BAE295 /* TempFormat.swift in Sources */,
 				B62A2B2A255EEA8200FB0DB5 /* CityTempData.swift in Sources */,
 				B60AD3F6255E4DD700293FD9 /* WeatherInfoCollectionViewCell.swift in Sources */,
 				B60AD37B255E283C00293FD9 /* AppDelegate.swift in Sources */,

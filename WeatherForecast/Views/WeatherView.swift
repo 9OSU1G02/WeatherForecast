@@ -80,7 +80,7 @@ class WeatherView: UIView {
     private func setupCurrentWeather() {
         cityNameLabel.text = currentWeather.city
         dateLabel.text = "Today, \(currentWeather.date.shortDate())"
-        tempLabel.text = String(format: "%.0f", currentWeather.currentTemp)
+        tempLabel.text = String(format: "%.0f%@", currentWeather.currentTemp, returnRawValueTempFormatIconFromUserDefaults())
         weatherDescriptionLabel.text = currentWeather.weatherType
         }
     

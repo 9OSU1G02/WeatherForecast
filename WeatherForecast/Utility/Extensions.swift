@@ -26,3 +26,9 @@ extension Date {
         return dateFormatter.string(from: self)
     }
 }
+
+extension Double {
+    func toFahrenheit() -> Double {
+        (self * 9/5) + 32
+    }
+}

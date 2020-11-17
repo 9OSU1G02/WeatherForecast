@@ -21,4 +21,26 @@ func getWeatherIconFor(_ type: String) -> UIImage {
     return icon
 }
 
+func getTempBasedOnSettings(celcius: Double) -> Double {
+    let format = returnTempFormatFromUserDefaults()
+    switch format {
+    case .celsius:
+        return celcius
+    case .fahrenheit:
+        return celcius.toFahrenheit()
+    }
+}
+func returnTempFormatFromUserDefaults() -> TempFormat {
+    guard let tempFormat = UserDefaults.standard.value(forKey: "TempFormat") as? Int else { return .celsius }
+    return  tempFormat == 0 ? .celsius : .fahrenheit
+}
+
+func returnRawValueTempFormatIconFromUserDefaults() -> String {
+    guard let tempFormatIndex = UserDefaults.standard.value(forKey: "TempFormat") as? Int
+    else {
+        return "℃"
+        }
+    let iconTempFormat = TempFormat.allCases[tempFormatIndex].rawValue.components(separatedBy: " ")
+    return iconTempFormat[1]
+}
 

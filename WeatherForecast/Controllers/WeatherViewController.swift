@@ -24,6 +24,7 @@ class WeatherViewController: UIViewController {
         //Scroll by page
         currentWeatherScrollView.isPagingEnabled = true
         currentWeatherScrollView.delegate = self
+        setUpListenForTempFormatChange()
     }
     
     
@@ -49,6 +50,15 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var currentWeatherScrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     
+    // MARK: - Observer
+    private func setUpListenForTempFormatChange() {
+        NotificationCenter.default.addObserver(forName: Notification.Name("units"), object: nil, queue: .main) { (unitParameter) in
+            guard let object = unitParameter.object as? Bool else {
+                return
+            }
+            self.shouldReload = object
+        }
+    }
     // MARK: - Download Weather
     private func getWeather() {
         loadLocationFromUserDefaults()

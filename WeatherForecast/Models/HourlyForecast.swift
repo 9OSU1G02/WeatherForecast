@@ -37,7 +37,7 @@ class HourlyForecast {
     init(weatherDictionary: Dictionary<String,AnyObject>) {
         //Convert dictionary to JSON
         let json = JSON(weatherDictionary)
-        self._temp = json["temp"].double ?? 0
+        self._temp = getTempBasedOnSettings(celcius: json["temp"].double ?? 0.0) 
         self._date = DateFromUnix(unixDate: json["ts"].double)
         self._weatherIcon = json["weather"]["icon"].stringValue
     }

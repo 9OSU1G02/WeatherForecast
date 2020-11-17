@@ -124,7 +124,7 @@ class CurrentWeather {
             self._city = json["data"][0]["city_name"].stringValue
             self._date = DateFromUnix(unixDate: json["data"][0]["ts"].double)
             self._weatherType = json["data"][0]["weather"]["description"].stringValue
-            self._currentTemp = json["data"][0]["temp"].double ?? 0
+            self._currentTemp = getTempBasedOnSettings(celcius: json["data"][0]["temp"].double ?? 0)
             self._feelsLike = json["data"][0]["app_temp"].double ?? 0
             self._pressure = json["data"][0]["pres"].double
             self._humidity = json["data"][0]["rh"].double

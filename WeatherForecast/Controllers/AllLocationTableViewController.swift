@@ -102,7 +102,7 @@ class AllLocationTableViewController: UITableViewController{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? AllLocationTableViewCell
             else { fatalError("Could not create BookCell") }
             cell.cityNameLabel.text = cityTempData.city
-            cell.tempratureLabel.text = String(format: "%.0f", cityTempData.temp)
+            cell.tempratureLabel.text = String(format: "%.0f%@", cityTempData.temp, returnRawValueTempFormatIconFromUserDefaults())
             cell.currentLocationIconImage.isHidden = !cityTempData.isCurrentLocation
             return cell
         }
