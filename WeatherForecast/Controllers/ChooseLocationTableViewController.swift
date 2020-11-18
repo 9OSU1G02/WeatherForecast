@@ -11,7 +11,7 @@ protocol ChooseCityViewControllerDelegate {
 }
 class ChooseLocationTableViewController: UITableViewController {
     // MARK: - Properties
-    var savedLocations: [WeatherLocation]?
+    var savedLocations = WeatherLocationManger.allWeatherLocation
     let searchController = UISearchController(searchResultsController: nil)
     var allLocation : [WeatherLocation] = []
     var filterdLocations : [WeatherLocation] = []
@@ -21,13 +21,12 @@ class ChooseLocationTableViewController: UITableViewController {
         super.viewDidLoad()
         searchController.searchBar.delegate = self
         setupSearchController()
-        loadLocationFromUserDefaults()
         loadLocationFromCSV()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        loadLocationFromUserDefaults()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        savedLocations = WeatherLocationManger.allWeatherLocation
     }
     
     // MARK: - Search Controller
@@ -78,25 +77,25 @@ class ChooseLocationTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.delegate = navigationController?.viewControllers[0] as! WeatherViewController
         if searchController.isActive && searchController.searchBar.text != ""   {
-            if savedLocations!.contains(allLocation[indexPath.row]) || savedLocations!.contains(filterdLocations[indexPath.row]) {
+            if savedLocations.contains(allLocation[indexPath.row]) || savedLocations.contains(filterdLocations[indexPath.row]) {
                 didChooseLocationIsAlreadyExist()
             }
             else {
                 saveLocationToUserDefaults(location: filterdLocations[indexPath.row])
                 tableView.deselectRow(at: indexPath, animated: true)
                 navigationController?.popToRootViewController(animated: true)
-                delegate?.didAdd(indexOffset: savedLocations!.count - 1, shouldReload: true)
+                delegate?.didAdd(indexOffset: savedLocations.count - 1, shouldReload: true)
             }
         }
         else {
-            if savedLocations!.contains(allLocation[indexPath.row]){
+            if savedLocations.contains(allLocation[indexPath.row]){
                 didChooseLocationIsAlreadyExist()
             }
             else {
                 saveLocationToUserDefaults(location: allLocation[indexPath.row])
                 tableView.deselectRow(at: indexPath, animated: true)
                 navigationController?.popToRootViewController(animated: true)
-                delegate?.didAdd(indexOffset: savedLocations!.count - 1, shouldReload: true)
+                delegate?.didAdd(indexOffset: savedLocations.count - 1, shouldReload: true)
             }
         }
     }
@@ -138,25 +137,14 @@ class ChooseLocationTableViewController: UITableViewController {
     }
     // MARK: - UserDefaults
     private func saveLocationToUserDefaults(location: WeatherLocation) {
-        if savedLocations != nil {
             //if savedLocations (data in userDefault) don't contain location then add location
-            if !savedLocations!.contains(location) {
-                savedLocations!.append(location)
+            if !savedLocations.contains(location) {
+                savedLocations.append(location)
             }
-        }
-        //if savedLocations (data in userDefault ) doesn exit
-        else {
-            savedLocations = [location]
-        }
-        //save savedLocations to user default
-        WeatherLocationManger.saveWeatherLocationToUserDefautls(allWeatherLocation: savedLocations!)
+              //save savedLocations to user default
+        WeatherLocationManger.saveWeatherLocationToUserDefautls(allWeatherLocation: savedLocations)
     }
-    
-    private func loadLocationFromUserDefaults() {
-        if let data = UserDefaults.standard.value(forKey: "Locations") as? Data {
-            savedLocations = try? PropertyListDecoder().decode([WeatherLocation].self, from: data)
-        }
-    }
+       
 }
 
 // MARK: - Extension

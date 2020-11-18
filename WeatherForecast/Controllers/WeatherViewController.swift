@@ -97,6 +97,8 @@ class WeatherViewController: UIViewController {
         for location in allLocations {
             let weatherView = WeatherView()
             weatherView.isCurrentLocation = location.isCurrentLocation
+            weatherView.lat = location.lat
+            weatherView.lon = location.lon
             allWeatherViews.append(weatherView)
         }
     }

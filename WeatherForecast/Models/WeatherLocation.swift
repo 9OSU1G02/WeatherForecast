@@ -8,8 +8,8 @@
 import Foundation
 struct WeatherLocation: Codable, Equatable {
     var city: String!
-    var lat: String
-    var lon: String
+    var lat: String!
+    var lon: String!
     var country: String!
     var contryCode: String!
     var adminCity: String!
