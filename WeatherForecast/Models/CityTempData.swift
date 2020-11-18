@@ -10,4 +10,6 @@ struct CityTempData : Hashable {
     var city: String!
     var temp: Double!
     var isCurrentLocation: Bool!
+    var lat:String!
+    var lon:String!
 }

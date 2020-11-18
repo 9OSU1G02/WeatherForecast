@@ -13,6 +13,8 @@ class WeatherView: UIView {
     var weeklyForecastData: [WeeklyForecast] = []
     var hourlyForecastData: [HourlyForecast] = []
     var weatherInfoData: [WeatherInfo] = []
+    var lat:String!
+    var lon:String!
     var isCurrentLocation:Bool!
     @IBOutlet var mainView: UIView!
     @IBOutlet weak var cityNameLabel: UILabel!

@@ -51,7 +51,7 @@ class WeatherLocationManger {
                         return cityTempdata.isCurrentLocation == true
                     }
                     else {
-                            return i.city == cityTempdata.city
+                            return i.lat == cityTempdata.lat && i.lon == cityTempdata.lon
                     }
                     }) {
                     _allWeatherLocation[index] = i

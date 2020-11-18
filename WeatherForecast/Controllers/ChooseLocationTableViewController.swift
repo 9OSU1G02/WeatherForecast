@@ -89,7 +89,7 @@ class ChooseLocationTableViewController: UITableViewController {
             }
         }
         else {
-            if savedLocations!.contains(allLocation[indexPath.row]) || savedLocations!.contains(filterdLocations[indexPath.row]) {
+            if savedLocations!.contains(allLocation[indexPath.row]){
                 didChooseLocationIsAlreadyExist()
             }
             else {

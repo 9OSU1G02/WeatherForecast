@@ -127,7 +127,7 @@ class WeatherViewController: UIViewController {
     // MARK: - Load Location from user Defalt
     private func loadLocationFromUserDefaults() {
         //city, country, countryCode will be apply later
-        let currentLocation = WeatherLocation(city: "", lat: "", lon: "", country: "", contryCode: "", adminCity: "", isCurrentLocation: true)
+        let currentLocation = WeatherLocation(city: "", lat: "\(LocationService.shared.latitude)", lon: "\(LocationService.shared.longtitude)", country: "", contryCode: "", adminCity: "", isCurrentLocation: true)
         if let data = UserDefaults.standard.value(forKey: KEY_LOCATIONS) as? Data {
             guard var allLocations = try? PropertyListDecoder().decode([WeatherLocation].self, from: data) else { fatalError("Cannot Decode location from user default") }
             
@@ -199,7 +199,7 @@ class WeatherViewController: UIViewController {
     private func generateWeatherList() {
         CityTempDataManager.allCityTempData = []
         for weatherView in allWeatherViews {
-            let tempData = CityTempData(city: weatherView.currentWeather.city, temp: weatherView.currentWeather.currentTemp, isCurrentLocation: weatherView.isCurrentLocation)
+            let tempData = CityTempData(city: weatherView.currentWeather.city, temp: weatherView.currentWeather.currentTemp, isCurrentLocation: weatherView.isCurrentLocation,lat: weatherView.lat, lon: weatherView.lon)
             CityTempDataManager.allCityTempData.append(tempData)
         }
     }
