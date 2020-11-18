@@ -50,6 +50,7 @@ class WeeklyForecast {
         }
         var weeklyForcast : [WeeklyForecast] = []
         AF.request("https://api.weatherbit.io/v2.0/forecast/daily?days=7",parameters: parameters).responseJSON { (reponse) in
+            print("Get weekly weather")
             guard let result = reponse.value
             else {
                 completion(weeklyForcast)

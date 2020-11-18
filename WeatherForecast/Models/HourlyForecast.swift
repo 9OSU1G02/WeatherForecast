@@ -52,6 +52,7 @@ class HourlyForecast {
         }
         var hourlyForecasts : [HourlyForecast] = []
         AF.request("https://api.weatherbit.io/v2.0/forecast/hourly?hours=24",parameters: parameters).responseJSON { (reponse) in
+            print("Get hourly weather")
             guard let result = reponse.value
             else {
                 compeltion(hourlyForecasts)
