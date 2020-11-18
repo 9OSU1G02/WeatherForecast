@@ -14,7 +14,6 @@ class WeatherViewController: UIViewController {
     var currentLocation: CLLocationCoordinate2D!
     var allLocations: [WeatherLocation] = []
     var allWeatherViews: [WeatherView] = []
-    
     var shouldReload = false
     // MARK: - View LifeCycle
     override func viewDidLoad() {
@@ -27,8 +26,7 @@ class WeatherViewController: UIViewController {
         setUpListenForTempFormatChange()
     }
     
-    
-    override func viewDidAppear(_ animated: Bool) {
+        override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         //If shouldRefrsh = true --> remove all data and get it again by call getWeather()
         if shouldReload {
@@ -211,8 +209,7 @@ class WeatherViewController: UIViewController {
         if segue.identifier == "allLocationSegue" {
             guard let vc = segue.destination as? AllLocationTableViewController else { fatalError("Can found allLocationSegue ")}
             vc.delegate = self
-            vc.shouldReload = shouldReload
-        }
+            }
     }
 }
 
@@ -229,7 +226,7 @@ extension WeatherViewController: ChooseCityViewControllerDelegate {
         updatePageControlSelectedPage(currentPage: indexOffset)
         self.shouldReload = shouldReload
     }
-        }
+}
 
 extension WeatherViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

@@ -37,10 +37,13 @@ class AllLocationTableViewController: UITableViewController{
         configureDataSource()
         dataSource.update(sortStyle: sortStyle)
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        loadSortStyleFromUserDefaults()
+    }
     override func willMove(toParent parent: UIViewController?) {
         super.willMove(toParent: parent)
         delegate?.didSortLocation(shouldReload: shouldReload)
+        
     }
     
     // MARK: - UserDefaults
@@ -51,11 +54,20 @@ class AllLocationTableViewController: UITableViewController{
     private func loadSortStyleFromUserDefaults() {
         if let rawValue = UserDefaults.standard.value(forKey: KEY_SORT_STYLE) as? Int {
             sortStyle = SortStyle(rawValue: rawValue)
+            for i in 0..<sortButtons.count {
+                // i + 1 because we have 3 button but 4 sort style
+                sortButtons[i].tintColor = i + 1 == rawValue ? .white : .secondaryLabel
+            }
         }
         else {
             sortStyle = SortStyle.currentLocation
+            sortButtons[0].tintColor = .white
+            sortButtons[1].tintColor = .secondaryLabel
+            sortButtons[2].tintColor = .secondaryLabel
         }
     }
+    
+    
     
     // MARK: - IBOutlets
     
@@ -65,32 +77,26 @@ class AllLocationTableViewController: UITableViewController{
     @IBAction func sortByCurrentLocation(_ sender: UIButton) {
         dataSource.update(sortStyle: .currentLocation)
         updateTintColors(tappedButton: sender)
+        shouldReload = true
         saveSortStyleInUserDefaults(rawValue: 1)
-        if sortStyle.rawValue != 1 {
-            shouldReload = true
-        }
     }
     @IBAction func sortByCityName(_ sender: UIButton) {
         dataSource.update(sortStyle: .cityName)
         updateTintColors(tappedButton: sender)
+        shouldReload = true
         saveSortStyleInUserDefaults(rawValue: 2)
-        if sortStyle.rawValue != 2 {
-            shouldReload = true
-        }
     }
     @IBAction func sortByTemprature(_ sender: UIButton) {
         dataSource.update(sortStyle: .temprature)
         updateTintColors(tappedButton: sender)
+        shouldReload = true
         saveSortStyleInUserDefaults(rawValue: 3)
-        if sortStyle.rawValue != 3 {
-            shouldReload = true
-        }
     }
     
     func updateTintColors(tappedButton: UIButton) {
         sortButtons.forEach { button in
             button.tintColor = button == tappedButton
-                ? button.tintColor
+                ? .white
                 : .secondaryLabel
         }
     }
@@ -115,7 +121,7 @@ class AllLocationTableViewController: UITableViewController{
         navigationController?.popViewController(animated: true)
         delegate?.didChooseLocation(atIndex: indexPath.row, shouldReload: shouldReload)
     }
-        
+    
 }
 
 
@@ -125,7 +131,7 @@ extension AllLocationTableViewController: AllLocationDataSourceDelegate {
         alert.addAction(UIAlertAction(title: "OK", style: .cancel))
         present(alert, animated: true, completion: nil)
     }
-                
+    
     func didEditRow(shouldReload: Bool) {
         self.shouldReload = shouldReload
     }

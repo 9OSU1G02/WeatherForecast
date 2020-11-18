@@ -159,6 +159,7 @@
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOM-KV-Sol">
                                             <rect key="frame" x="0.0" y="0.0" width="115" height="30"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="Current Location"/>
                                             <connections>
                                                 <action selector="sortByCurrentLocation:" destination="g2C-fA-B6R" eventType="touchUpInside" id="wYe-Um-0cd"/>
@@ -166,6 +167,7 @@
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z2g-T2-i4o">
                                             <rect key="frame" x="133" y="0.0" width="41" height="30"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="Name"/>
                                             <connections>
                                                 <action selector="sortByCityName:" destination="g2C-fA-B6R" eventType="touchUpInside" id="FLs-hQ-R7T"/>
@@ -173,6 +175,7 @@
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PpU-aQ-G1x">
                                             <rect key="frame" x="192" y="0.0" width="79" height="30"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="Temprature"/>
                                             <connections>
                                                 <action selector="sortByTemprature:" destination="g2C-fA-B6R" eventType="touchUpInside" id="ctl-nx-L3e"/>
@@ -242,9 +245,9 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="jf1-k4-tAC"/>
                     </navigationItem>
                     <connections>
-                        <outletCollection property="sortButtons" destination="PpU-aQ-G1x" collectionClass="NSMutableArray" id="3Bz-KC-hQd"/>
-                        <outletCollection property="sortButtons" destination="z2g-T2-i4o" collectionClass="NSMutableArray" id="ccE-wW-8CF"/>
-                        <outletCollection property="sortButtons" destination="yOM-KV-Sol" collectionClass="NSMutableArray" id="Urg-P4-dFM"/>
+                        <outletCollection property="sortButtons" destination="yOM-KV-Sol" collectionClass="NSMutableArray" id="rtG-4i-ODA"/>
+                        <outletCollection property="sortButtons" destination="z2g-T2-i4o" collectionClass="NSMutableArray" id="7oU-uY-ncE"/>
+                        <outletCollection property="sortButtons" destination="PpU-aQ-G1x" collectionClass="NSMutableArray" id="Yrm-qZ-dVT"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EWj-9d-4RV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
