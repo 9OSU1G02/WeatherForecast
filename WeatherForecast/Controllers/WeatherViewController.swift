@@ -28,8 +28,8 @@ class WeatherViewController: UIViewController {
     }
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         //If shouldRefrsh = true --> remove all data and get it again by call getWeather()
         if shouldReload {
             CityTempDataManager.allCityTempData = []

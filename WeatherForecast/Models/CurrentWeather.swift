@@ -109,10 +109,10 @@ class CurrentWeather {
         var parameters : [String:String] = [:]
         if !location.isCurrentLocation {
             //%@ arguments will be replace by location.city and location.countryCode
-            parameters = ["lat" : location.lat , "lon" : location.lon, "key" : "ca313af990e94174bab2912d60a680ce"]
+            parameters = ["lat" : location.lat , "lon" : location.lon, "key" : "d702ceb3c7484a7886917d75a3b21533"]
         }
         else {
-            parameters = ["lat" : String(LocationService.shared.latitude) , "lon" : String(LocationService.shared.longtitude), "key" : "ca313af990e94174bab2912d60a680ce"]
+            parameters = ["lat" : String(LocationService.shared.latitude) , "lon" : String(LocationService.shared.longtitude), "key" : "d702ceb3c7484a7886917d75a3b21533"]
         }
         AF.request("https://api.weatherbit.io/v2.0/current",parameters: parameters).responseJSON { response in
             guard let result = response.value else {

@@ -9,7 +9,7 @@ import UIKit
 
 class WeatherView: UIView {
     // MARK: - Properties
-    var currentWeather: CurrentWeather = CurrentWeather()
+    var currentWeather: CurrentWeather!
     var weeklyForecastData: [WeeklyForecast] = []
     var hourlyForecastData: [HourlyForecast] = []
     var weatherInfoData: [WeatherInfo] = []
@@ -102,7 +102,7 @@ class WeatherView: UIView {
 
 extension WeatherView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return collectionView == hourlyForecastCollectionView ? hourlyForecastData.count : weeklyForecastData.count
+        return collectionView == hourlyForecastCollectionView ? hourlyForecastData.count : weatherInfoData.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
