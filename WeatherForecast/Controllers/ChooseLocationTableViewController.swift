@@ -78,7 +78,7 @@ class ChooseLocationTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.delegate = navigationController?.viewControllers[0] as! WeatherViewController
         if searchController.isActive && searchController.searchBar.text != ""   {
-            if savedLocations!.contains(allLocation[indexPath.row]) {
+            if savedLocations!.contains(allLocation[indexPath.row]) || savedLocations!.contains(filterdLocations[indexPath.row]) {
                 didChooseLocationIsAlreadyExist()
             }
             else {
@@ -89,7 +89,7 @@ class ChooseLocationTableViewController: UITableViewController {
             }
         }
         else {
-            if savedLocations!.contains(allLocation[indexPath.row]) {
+            if savedLocations!.contains(allLocation[indexPath.row]) || savedLocations!.contains(filterdLocations[indexPath.row]) {
                 didChooseLocationIsAlreadyExist()
             }
             else {
