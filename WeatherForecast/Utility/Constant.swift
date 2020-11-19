@@ -13,4 +13,7 @@ let KEY_SORT_STYLE = "SortStyle"
 
 let CURRENT_HOURLY_FORECAST_URL = "https://api.weatherbit.io/v2.0/forecast/hourly?lat=\(LocationService.shared.latitude ?? 0)&lon=\(LocationService.shared.longtitude ?? 0)&key=ca313af990e94174bab2912d60a680ce&hours=24"
 let CURRENT_WEEKLY_FORECAST_URL = "https://api.weatherbit.io/v2.0/forecast/daily?lat=\(LocationService.shared.latitude ?? 0)&lon=\(LocationService.shared.longtitude ?? 0)&key=ca313af990e94174bab2912d60a680ce&days=7"
-var CURRENT_FORECAST_URL = "https://api.weatherbit.io/v2.0/current?lat=\(LocationService.shared.latitude ?? 0)&lon=\(LocationService.shared.longtitude ?? 0)&key=ca313af990e94174bab2912d60a680ce"
+let CURRENT_FORECAST_URL = "https://api.weatherbit.io/v2.0/current?lat=\(LocationService.shared.latitude ?? 0)&lon=\(LocationService.shared.longtitude ?? 0)&key=ca313af990e94174bab2912d60a680ce"
+let NOTIFICATION_TEMP_FORMAT = "units"
+
+let CELL_IDENTIFIER = "cell"

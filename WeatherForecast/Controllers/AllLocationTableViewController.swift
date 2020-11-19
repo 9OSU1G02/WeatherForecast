@@ -105,7 +105,7 @@ class AllLocationTableViewController: UITableViewController{
     func configureDataSource() {
         dataSource = AllLocationDataSource(tableView: tableView) {
             tableView, indexPath, cityTempData -> UITableViewCell? in
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? AllLocationTableViewCell
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CELL_IDENTIFIER, for: indexPath) as? AllLocationTableViewCell
             else { fatalError("Could not create BookCell") }
             cell.cityNameLabel.text = cityTempData.city
             cell.tempratureLabel.text = String(format: "%.0f%@", cityTempData.temp, returnRawValueTempFormatIconFromUserDefaults())

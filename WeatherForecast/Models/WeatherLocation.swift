@@ -11,7 +11,7 @@ struct WeatherLocation: Codable, Equatable {
     var lat: String!
     var lon: String!
     var country: String!
-    var contryCode: String!
+    var countryCode: String!
     var adminCity: String!
     var isCurrentLocation: Bool!
 }

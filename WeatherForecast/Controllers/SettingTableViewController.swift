@@ -34,7 +34,7 @@ class SettingTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: CELL_IDENTIFIER, for: indexPath)
         let cellText = TempFormat.allCases[indexPath.row].rawValue.components(separatedBy: " ")
         cell.textLabel?.text = cellText[0]
         cell.detailTextLabel?.text = cellText[1]
@@ -51,7 +51,7 @@ class SettingTableViewController: UITableViewController {
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         if indexPath.row != currentIndexTempFormat {
             updateTempFormatInUserDefaults(newValue: indexPath.row)
-            NotificationCenter.default.post(name: Notification.Name("units"), object: true)
+            NotificationCenter.default.post(name: Notification.Name(NOTIFICATION_TEMP_FORMAT), object: true)
         }
     
     }
