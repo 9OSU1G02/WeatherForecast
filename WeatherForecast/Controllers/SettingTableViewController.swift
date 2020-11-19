@@ -11,7 +11,7 @@ import UIKit
 class SettingTableViewController: UITableViewController {
     // MARK: - Properties
     
-    var shouldRefresh = false
+    var shouldReload = false
     var currentIndexTempFormat: Int!
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -56,7 +56,7 @@ class SettingTableViewController: UITableViewController {
     
     }
     private func updateTempFormatInUserDefaults(newValue: Int) {
-        shouldRefresh = true
+        shouldReload = true
         UserDefaults.standard.set(newValue,forKey: KEY_TEMP_FORMAT)
         
     }

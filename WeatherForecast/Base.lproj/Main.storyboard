@@ -72,7 +72,7 @@
             </objects>
             <point key="canvasLocation" x="-672" y="361"/>
         </scene>
-        <!--Current Weather-->
+        <!--Weather View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="WeatherViewController" customModule="WeatherForecast" customModuleProvider="target" sceneMemberID="viewController">
@@ -81,39 +81,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKk-dw-XwR">
-                                <rect key="frame" x="0.0" y="88" width="414" height="715"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                             </scrollView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K4P-ae-gE3">
-                                <rect key="frame" x="0.0" y="803" width="414" height="10"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="10" id="hxU-eA-faM"/>
-                                </constraints>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="QK3-Ee-09Y"/>
-                                    <barButtonItem style="plain" id="Q8w-dX-b4y">
-                                        <pageControl key="customView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="STK-Ep-OpI">
-                                            <rect key="frame" x="145.5" y="0.0" width="123" height="10"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="currentPageIndicatorTintColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </pageControl>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="UVq-Sc-1Gs"/>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="K4P-ae-gE3" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="5eZ-yC-vFa"/>
-                            <constraint firstItem="lKk-dw-XwR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EpF-DK-iS3"/>
-                            <constraint firstItem="lKk-dw-XwR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GP8-5Y-4iy"/>
-                            <constraint firstItem="K4P-ae-gE3" firstAttribute="top" secondItem="lKk-dw-XwR" secondAttribute="bottom" id="LX0-Pw-BhI"/>
-                            <constraint firstItem="K4P-ae-gE3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZAc-eH-DWY"/>
-                            <constraint firstItem="K4P-ae-gE3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gp1-4I-aAh"/>
-                            <constraint firstItem="lKk-dw-XwR" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xma-OL-sD0"/>
+                            <constraint firstItem="lKk-dw-XwR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="TPH-JX-zfo"/>
+                            <constraint firstItem="lKk-dw-XwR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UdI-Hn-Fy4"/>
+                            <constraint firstItem="lKk-dw-XwR" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ana-0t-kRm"/>
+                            <constraint firstItem="lKk-dw-XwR" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="iLO-VT-qMl"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Current Weather" id="CLc-go-Drf">
+                    <navigationItem key="navigationItem" id="CLc-go-Drf">
+                        <nil key="title"/>
+                        <pageControl key="titleView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="iwD-Jd-zzz">
+                            <rect key="frame" x="146" y="8.5" width="122.5" height="27.5"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="currentPageIndicatorTintColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </pageControl>
                         <barButtonItem key="rightBarButtonItem" image="plus.circle" catalog="system" id="ej3-rS-kaz">
                             <connections>
                                 <segue destination="g2C-fA-B6R" kind="show" identifier="allLocationSegue" id="OFS-Ud-wLu"/>
@@ -122,12 +108,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="currentWeatherScrollView" destination="lKk-dw-XwR" id="IKO-Um-hhv"/>
-                        <outlet property="pageControl" destination="STK-Ep-OpI" id="v1L-Mg-oAH"/>
+                        <outlet property="pageControl" destination="iwD-Jd-zzz" id="dYt-ib-xUd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="84" y="-301"/>
+            <point key="canvasLocation" x="82.608695652173921" y="-301.33928571428572"/>
         </scene>
         <!--All Location-->
         <scene sceneID="nZt-jG-MxS">

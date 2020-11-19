@@ -136,6 +136,7 @@
 		B60AD379255E283C00293FD9 /* WeatherForecast */ = {
 			isa = PBXGroup;
 			children = (
+				B6FAC72F25662E0A00273F9C /* Managers */,
 				B62A2B2C255EFD4B00FB0DB5 /* Custom Cells */,
 				B6363383255EDC43007E6208 /* Location */,
 				B60AD3D6255E434800293FD9 /* Views */,
@@ -163,8 +164,6 @@
 				B60AD407255E5E6100293FD9 /* WeatherInfo.swift */,
 				B6E33F6D255EA27200D1D837 /* WeatherLocation.swift */,
 				B62A2B29255EEA8200FB0DB5 /* CityTempData.swift */,
-				B62A3C622560FA9B00DFC6E6 /* CityTempDataManager.swift */,
-				B6C72C6625621AC900B83364 /* WeatherLocationManager.swift */,
 				B621E41A256421CA00BAE295 /* TempFormat.swift */,
 			);
 			path = Models;
@@ -221,6 +220,15 @@
 				B6363384255EDC8C007E6208 /* CurrentLocationService.swift */,
 			);
 			path = Location;
+			sourceTree = "<group>";
+		};
+		B6FAC72F25662E0A00273F9C /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				B62A3C622560FA9B00DFC6E6 /* CityTempDataManager.swift */,
+				B6C72C6625621AC900B83364 /* WeatherLocationManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

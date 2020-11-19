@@ -37,6 +37,7 @@ class WeatherViewController: UIViewController {
             getWeather()
             locationManager?.startUpdatingLocation()
         }
+        shouldReload = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -50,7 +51,7 @@ class WeatherViewController: UIViewController {
     
     // MARK: - Observer
     private func setUpListenForTempFormatChange() {
-        NotificationCenter.default.addObserver(forName: Notification.Name("units"), object: nil, queue: .main) { (unitParameter) in
+        NotificationCenter.default.addObserver(forName: Notification.Name(NOTIFICATION_TEMP_FORMAT), object: nil, queue: .main) { (unitParameter) in
             guard let object = unitParameter.object as? Bool else {
                 return
             }
@@ -129,7 +130,7 @@ class WeatherViewController: UIViewController {
     // MARK: - Load Location from user Defalt
     private func loadLocationFromUserDefaults() {
         //city, country, countryCode will be apply later
-        let currentLocation = WeatherLocation(city: "", lat: "\(LocationService.shared.latitude)", lon: "\(LocationService.shared.longtitude)", country: "", countryCode: "", adminCity: "", isCurrentLocation: true)
+        let currentLocation = WeatherLocation(city: "", lat: "\(LocationService.shared.latitude ?? 21.0245)", lon: "\(LocationService.shared.longtitude ?? 105.84117)", country: "", countryCode: "", adminCity: "", isCurrentLocation: true)
         if let data = UserDefaults.standard.value(forKey: KEY_LOCATIONS) as? Data {
             guard var allLocations = try? PropertyListDecoder().decode([WeatherLocation].self, from: data) else { fatalError("Cannot Decode location from user default") }
             
