@@ -42,11 +42,10 @@ class WeeklyForecast {
     class func downloadWeeklyWeatherForecast(location: WeatherLocation, completion: @escaping (_ weatherForecast: [WeeklyForecast]) ->Void) {
         var parameters : [String:String] = [:]
         if !location.isCurrentLocation {
-            //%@ arguments will be replace by location.city and location.countryCode
-            parameters = ["lat" : location.lat , "lon" : location.lon, "key" : "82b9df16292f41d1ace6baeac1856d20"]
+            parameters = ["lat" : location.lat , "lon" : location.lon, "key" : API_KEY]
         }
         else {
-            parameters = ["lat" : String(LocationService.shared.latitude) , "lon" : String(LocationService.shared.longtitude), "key" : "82b9df16292f41d1ace6baeac1856d20"]
+            parameters = ["lat" : String(LocationService.shared.latitude) , "lon" : String(LocationService.shared.longtitude), "key" : API_KEY]
         }
         var weeklyForcast : [WeeklyForecast] = []
         AF.request("https://api.weatherbit.io/v2.0/forecast/daily?days=7",parameters: parameters).responseJSON { (reponse) in

@@ -53,7 +53,7 @@ class SettingTableViewController: UITableViewController {
             updateTempFormatInUserDefaults(newValue: indexPath.row)
             NotificationCenter.default.post(name: Notification.Name(NOTIFICATION_TEMP_FORMAT), object: true)
         }
-    
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     private func updateTempFormatInUserDefaults(newValue: Int) {
         shouldReload = true

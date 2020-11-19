@@ -45,6 +45,19 @@ class WeatherLocationManger {
             _allWeatherLocation.swapAt(0, currentWeatherLocationIndex!)
             
         case .cityName,.temprature:
+            //get order lat & lon of cityTempData in CityTempDataManager.allCityTempData then apply that order to lat & lon of weatherLocation in _allWeatherLocation ( because lat & lon of cityTempData is identical with lat & lon of weatherLocation )
+            /*Test Code
+             
+             var huhuhu = ["nguyen","quoc","huy"]
+             var hihihi = ["huy","quoc","nguyen"]
+             for i in hihihi {
+                 if let index = huhuhu.firstIndex(of: i) {
+                     hihihi[index] = i
+                 }
+             }
+             print(hihihi)
+             
+             */
             for i in _allWeatherLocation {
                 if let index = CityTempDataManager.allCityTempData.firstIndex(where: { (cityTempdata) -> Bool in
                     if i.isCurrentLocation {

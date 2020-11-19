@@ -30,12 +30,12 @@ class WeatherViewController: UIViewController {
         super.viewDidAppear(animated)
         //If shouldRefrsh = true --> remove all data and get it again by call getWeather()
         if shouldReload {
+            locationManager?.startUpdatingLocation()
             CityTempDataManager.allCityTempData = []
             allLocations = []
             allWeatherViews = []
             removeSubViewsFromScrollView()
             getWeather()
-            locationManager?.startUpdatingLocation()
         }
         shouldReload = false
     }
@@ -58,11 +58,12 @@ class WeatherViewController: UIViewController {
             self.shouldReload = object
         }
     }
+    
     // MARK: - Download Weather
     private func getWeather() {
         loadLocationFromUserDefaults()
         createWeatherViews()
-        addWeatherToScrollView()
+        addWeatherViewToScrollView()
         setPageControlPageNumber()
     }
     
@@ -104,7 +105,7 @@ class WeatherViewController: UIViewController {
         }
     }
     
-    private func addWeatherToScrollView() {
+    private func addWeatherViewToScrollView() {
         //weatherView have same index with location
         for i in 0 ..< allWeatherViews.count {
             let weatherView = allWeatherViews[i]
@@ -145,7 +146,7 @@ class WeatherViewController: UIViewController {
             //No data in UserDefaults
             allLocations.append(currentLocation)
         }
-        UserDefaults.standard.set(try? PropertyListEncoder().encode(allLocations), forKey: "Locations")
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(allLocations), forKey: KEY_LOCATIONS)
     }
     
     // MARK: - PageControl
@@ -157,7 +158,32 @@ class WeatherViewController: UIViewController {
         pageControl.currentPage =  currentPage
     }
     
-    // MARK: - Location Manager
+   
+    // MARK: - Delegate
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Faild to get location,\(error.localizedDescription)")
+    }
+    
+    private func generateWeatherList() {
+        CityTempDataManager.allCityTempData = []
+        for weatherView in allWeatherViews {
+            let tempData = CityTempData(city: weatherView.currentWeather.city, temp: weatherView.currentWeather.currentTemp, isCurrentLocation: weatherView.isCurrentLocation,lat: weatherView.lat, lon: weatherView.lon)
+            CityTempDataManager.allCityTempData.append(tempData)
+        }
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "allLocationSegue" {
+            guard let vc = segue.destination as? AllLocationTableViewController else { fatalError("Can found allLocationSegue ")}
+            vc.delegate = self
+        }
+    }
+}
+
+// MARK: - Extension
+
+extension WeatherViewController: CLLocationManagerDelegate {
     private func locationManagerStart() {
         if locationManager == nil {
             locationManager = CLLocationManager()
@@ -193,30 +219,6 @@ class WeatherViewController: UIViewController {
             getWeather()
         }
     }
-    
-    // MARK: - Delegate
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Faild to get location,\(error.localizedDescription)")
-    }
-    
-    private func generateWeatherList() {
-        CityTempDataManager.allCityTempData = []
-        for weatherView in allWeatherViews {
-            let tempData = CityTempData(city: weatherView.currentWeather.city, temp: weatherView.currentWeather.currentTemp, isCurrentLocation: weatherView.isCurrentLocation,lat: weatherView.lat, lon: weatherView.lon)
-            CityTempDataManager.allCityTempData.append(tempData)
-        }
-    }
-    
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "allLocationSegue" {
-            guard let vc = segue.destination as? AllLocationTableViewController else { fatalError("Can found allLocationSegue ")}
-            vc.delegate = self
-            }
-    }
-}
-
-extension WeatherViewController: CLLocationManagerDelegate {
     
 }
 

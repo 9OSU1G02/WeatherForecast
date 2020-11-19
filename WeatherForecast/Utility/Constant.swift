@@ -17,3 +17,5 @@ let CURRENT_FORECAST_URL = "https://api.weatherbit.io/v2.0/current?lat=\(Locatio
 let NOTIFICATION_TEMP_FORMAT = "units"
 
 let CELL_IDENTIFIER = "cell"
+
+let API_KEY = "82b9df16292f41d1ace6baeac1856d20"

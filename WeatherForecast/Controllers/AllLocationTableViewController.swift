@@ -43,8 +43,7 @@ class AllLocationTableViewController: UITableViewController{
     override func willMove(toParent parent: UIViewController?) {
         super.willMove(toParent: parent)
         delegate?.didSortLocation(shouldReload: shouldReload)
-        
-    }
+}
     
     // MARK: - UserDefaults
     private func saveSortStyleInUserDefaults(rawValue: Int ) {
@@ -132,14 +131,19 @@ extension AllLocationTableViewController: AllLocationDataSourceDelegate {
         present(alert, animated: true, completion: nil)
     }
     
-    func didEditRow(shouldReload: Bool) {
+    func didEditRow(shouldReload: Bool, shouldReColorSortButtons: Bool) {
         self.shouldReload = shouldReload
+        if shouldReColorSortButtons {
+            sortButtons.forEach{$0.tintColor = .secondaryLabel}
+        }
     }
-    
 }
 
+
+// MARK: - AllLocationDataSource
+
 protocol AllLocationDataSourceDelegate {
-    func didEditRow(shouldReload: Bool)
+    func didEditRow(shouldReload: Bool, shouldReColorSortButtons: Bool)
     func didChooseDeleteCurrentLocation()
 }
 
@@ -186,7 +190,7 @@ class AllLocationDataSource: UITableViewDiffableDataSource<Section,CityTempData>
             WeatherLocationManger.deleteWeatherLocation(index: indexPath.row)
             update(sortStyle: currentSortStyle)
         }
-        delegate?.didEditRow(shouldReload: true)
+        delegate?.didEditRow(shouldReload: true, shouldReColorSortButtons: false)
     }
     
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
@@ -200,6 +204,7 @@ class AllLocationDataSource: UITableViewDiffableDataSource<Section,CityTempData>
             apply(snapshot(), animatingDifferences: false)
             return
         }
+            
         // Reoder cityTempData in allCityTempData
         CityTempDataManager.reoderCityTempData(IndexOfCityTempDataToMove: sourceIndexPath.row, IndexOfCityTempDataDestination: destinationIndexPath.row)
         // Reoder weatherLocation in userDefault
@@ -207,7 +212,8 @@ class AllLocationDataSource: UITableViewDiffableDataSource<Section,CityTempData>
         update(sortStyle: .userEdited, animatingDifferences: false)
         //save user edit sort Style
         UserDefaults.standard.setValue(0, forKey: KEY_SORT_STYLE)
-        delegate?.didEditRow(shouldReload: true)
+        //Set color of all 3 sort button to secondLabelTilte color
+        delegate?.didEditRow(shouldReload: true,shouldReColorSortButtons: true)
     }
 }
 
