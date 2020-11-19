@@ -51,22 +51,17 @@ class WeatherLocationManger {
              var huhuhu = ["nguyen","quoc","huy"]
              var hihihi = ["huy","quoc","nguyen"]
              for i in hihihi {
-                 if let index = huhuhu.firstIndex(of: i) {
-                     hihihi[index] = i
-                 }
+             if let index = huhuhu.firstIndex(of: i) {
+             hihihi[index] = i
+             }
              }
              print(hihihi)
              
              */
             for i in _allWeatherLocation {
                 if let index = CityTempDataManager.allCityTempData.firstIndex(where: { (cityTempdata) -> Bool in
-                    if i.isCurrentLocation {
-                        return cityTempdata.isCurrentLocation == true
-                    }
-                    else {
-                            return i.lat == cityTempdata.lat && i.lon == cityTempdata.lon
-                    }
-                    }) {
+                    return i.lat == cityTempdata.lat && i.lon == cityTempdata.lon
+                }) {
                     _allWeatherLocation[index] = i
                 }
             }

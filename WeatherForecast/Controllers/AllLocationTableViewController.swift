@@ -121,6 +121,10 @@ class AllLocationTableViewController: UITableViewController{
         delegate?.didChooseLocation(atIndex: indexPath.row, shouldReload: shouldReload)
     }
     
+    //Hide delete function for row containe current weather location
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return WeatherLocationManger.allWeatherLocation[indexPath.row].isCurrentLocation ? .none : .delete
+    }
 }
 
 
@@ -144,7 +148,6 @@ extension AllLocationTableViewController: AllLocationDataSourceDelegate {
 
 protocol AllLocationDataSourceDelegate {
     func didEditRow(shouldReload: Bool, shouldReColorSortButtons: Bool)
-    func didChooseDeleteCurrentLocation()
 }
 
 class AllLocationDataSource: UITableViewDiffableDataSource<Section,CityTempData> {
@@ -177,26 +180,21 @@ class AllLocationDataSource: UITableViewDiffableDataSource<Section,CityTempData>
         return true
     }
     
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            if itemIdentifier(for: indexPath)!.isCurrentLocation {
-                delegate?.didChooseDeleteCurrentLocation()
-                return
-            }
             // Delete cityTempData from allCityTempData
             CityTempDataManager.deletecityTempData(at: indexPath.row)
             // TODO: - Delete weatherLocation from userDefaults
-            // - 1 because
             WeatherLocationManger.deleteWeatherLocation(index: indexPath.row)
             update(sortStyle: currentSortStyle)
         }
         delegate?.didEditRow(shouldReload: true, shouldReColorSortButtons: false)
     }
-    
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
+            
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         guard
             sourceIndexPath != destinationIndexPath
@@ -209,7 +207,7 @@ class AllLocationDataSource: UITableViewDiffableDataSource<Section,CityTempData>
         CityTempDataManager.reoderCityTempData(IndexOfCityTempDataToMove: sourceIndexPath.row, IndexOfCityTempDataDestination: destinationIndexPath.row)
         // Reoder weatherLocation in userDefault
         WeatherLocationManger.reoderWeatherLocation(indexOfWeatherLocationToMove: sourceIndexPath.row, indexOfWeatherLocationDestination: destinationIndexPath.row)
-        update(sortStyle: .userEdited, animatingDifferences: false)
+        update(sortStyle: .userEdited, animatingDifferences: true)
         //save user edit sort Style
         UserDefaults.standard.setValue(0, forKey: KEY_SORT_STYLE)
         //Set color of all 3 sort button to secondLabelTilte color

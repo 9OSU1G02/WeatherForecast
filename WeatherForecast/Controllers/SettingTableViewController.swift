@@ -58,7 +58,6 @@ class SettingTableViewController: UITableViewController {
     private func updateTempFormatInUserDefaults(newValue: Int) {
         shouldReload = true
         UserDefaults.standard.set(newValue,forKey: KEY_TEMP_FORMAT)
-        
     }
     
     private func loadTempFormatFromUserDefaults() {

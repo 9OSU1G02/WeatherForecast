@@ -144,8 +144,7 @@ class ChooseLocationTableViewController: UITableViewController {
               //save savedLocations to user default
         WeatherLocationManger.saveWeatherLocationToUserDefautls(allWeatherLocation: savedLocations)
     }
-       
-}
+       }
 
 // MARK: - Extension
 
